@@ -1,7 +1,7 @@
 #body-login{
   /* background-image: linear-gradient(to right bottom, #051937, #0a4066, #006c96, #009cc3, #12cfeb); */
-  background: rgb(63,185,251);
-  background: radial-gradient(circle, rgba(63,185,251,1) 0%, rgba(70,81,252,1) 100%);
+  background: rgb(230, 235, 190);
+  background: radial-gradient(circle at center center, rgb(255, 236, 198) 0%, rgb(141, 63, 0) 100%);
   background-attachment: fixed;
 }
 

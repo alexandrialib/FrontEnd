@@ -1,10 +1,9 @@
 .projects-container{
   display: grid;
   justify-content: center;
-  height: 500px;
   grid-template-columns: repeat(3,200px);
   grid-template-rows: auto;
-  grid-gap: 20px 20px;
+  gap: 20px 50px;
 }
 
 .project{
@@ -15,7 +14,7 @@
   border-color: black;
   border-style: dashed;
   grid-template-columns:1fr;
-  grid-template-rows: 1fr 40px 1.5fr 0.5fr;
+  grid-template-rows: repeat(1fr,4);
   box-shadow: 5px 5px 5px 1px; 
 }
 
@@ -48,10 +47,6 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 0;
-}
-
-.project-task ol  {
-  text-align: left !important;
 }
 
 .project-new{

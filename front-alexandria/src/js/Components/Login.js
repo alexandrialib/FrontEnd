@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../css/Login.css'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import {Link} from 'react-router-dom'

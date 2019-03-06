@@ -18,6 +18,7 @@
   justify-content: center;
   grid-template-columns:repeat(7,60px);
   grid-template-rows: var(--height-bar); 
+  gap:10px;
 }
 
 .bar-logo{

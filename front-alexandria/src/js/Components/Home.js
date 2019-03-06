@@ -1,16 +1,20 @@
 import React from 'react'
 import '../../css/Home.css'
 import { Navbar } from './NavBar';
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import {Link} from 'react-router-dom';
 import {ProjectList} from './ProjectList'
+const axios = require('axios');
+
 export default class Home extends React.Component{
   
   render() {
+    
+
     const menuItems = [
       {
         key:"2",
-        object:"Home",
+        object:"Categories",
         src:"/"
       },
       {
@@ -43,15 +47,18 @@ export default class Home extends React.Component{
         object:"Login",
         src:"/login"
       }]
+      
       var menu = menuItems.map(x=>
       <div key={x.key} className="menu-item"><Link to = {x.src} >{x.object}</Link></div>
       )
       
+        console.log(temporal)
     document.body.id="";
     return (
       <div>
         <Navbar menu={menu}/>
-        <ProjectList/>
+        <h1 style={{textAlign:"center",marginTop:100}}>Alexandria</h1>
+        <ProjectList project={temporal}/>
       </div>
     );
   }    
