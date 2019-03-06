@@ -1,0 +1,56 @@
+
+.login-center{
+  margin: 0 auto;
+  padding: 0;
+  width: 350px;
+  margin-top: 15%;
+  border: 0.2px;
+  border-color: white;
+  border-style: solid;
+  background-color: rgba(48, 48, 48, 0.81);
+  box-shadow: 0px 0px 3px #848484;
+  border-radius: 10px;
+}
+
+.logo-login{
+  margin-top: -50px;
+  margin-bottom: 35px;
+}
+.logo-login img {
+  border-shadow: 0px 0px 2px #848484;
+}
+
+.inputText{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px; 
+}
+
+.p-float-label{
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom : 10px
+}
+
+.p-float-label input{
+  height: 37px;
+}
+
+#login-button{
+  margin: 5px;
+}
+
+#register-button{
+  margin: 5px;
+}
+
+.forgot-text-div{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.forgot-text:hover .forgot-text:focus {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: black;
+}
