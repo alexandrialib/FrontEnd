@@ -24,8 +24,8 @@ export default class Home extends React.Component{
       },
       {
         key:"3",
-        object:"About",
-        src:"/"
+        object:"Articule",
+        src:"/articule"
       },
       {
         key:"1",
@@ -46,19 +46,20 @@ export default class Home extends React.Component{
         key:"5",
         object:"Login",
         src:"/login"
-      }]
+      }
+    ]
       
       var menu = menuItems.map(x=>
       <div key={x.key} className="menu-item"><Link to = {x.src} >{x.object}</Link></div>
       )
       
-        console.log(temporal)
+       /*  console.log(temporal) */
     document.body.id="";
     return (
       <div>
         <Navbar menu={menu}/>
         <h1 style={{textAlign:"center",marginTop:100}}>Alexandria</h1>
-        <ProjectList project={temporal}/>
+       {/*  <ProjectList project={temporal}/> */}
       </div>
     );
   }    
