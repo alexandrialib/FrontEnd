@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../css/Home.css'
+import '../../css/Article.css';
 import { Navbar } from './NavBar';
+import {articleList} from './ArticleList';
 import logo from '../../images/logo.png'
 import {Link} from 'react-router-dom';
 import {ProjectList} from './ProjectList'
@@ -59,6 +61,7 @@ export default class Home extends React.Component{
       <div>
         <Navbar menu={menu}/>
         <h1 style={{textAlign:"center",marginTop:100}}>Alexandria</h1>
+        <articleList></articleList>
        {/*  <ProjectList project={temporal}/> */}
       </div>
     );
