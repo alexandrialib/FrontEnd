@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import '../../css/Article.css';
 import ArticleList from './ArticleList';
-import {Link} from 'react-router-dom';
+
 import axios from 'axios';
+import {getAllCategories} from '../DataProvider';
 const path=(match)=>{
   
 //<Route path={`${match.path}/:id`} component={ArticleList}/>
@@ -11,19 +12,20 @@ const path=(match)=>{
 export default class Categories extends Component{
     constructor(){
         super();
+        var path="";
         this.state={
           categories:[]
         }
       }
 
-    componentDidMount(){
-        axios.get(`http://alexandria-lib-back.herokuapp.com/categories`)
-        .then(res => {
-          const categories = res.data;
+    async componentDidMount(){
+      const posts=await getAllCategories("categories");
+      console.log(posts.name);
+      
+        
+          const categories = posts;
           this.setState({ categories });
-        })
-    
-  
+
     }
     
     render(){ 
