@@ -26,8 +26,8 @@ export default class Home extends React.Component{
       },
       {
         key:"3",
-        object:"Articule",
-        src:"/articule"
+        object:"Categories",
+        src:"/categories"
       },
       {
         key:"1",

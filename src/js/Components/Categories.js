@@ -4,7 +4,7 @@ import '../../css/Article.css';
 import Article from './Article';
 
 import ReactDOM from 'react-dom';
-export default class ArticlelList extends Component{
+export default class Categories extends Component{
     constructor(){
         super();
         this.state={
@@ -14,10 +14,10 @@ export default class ArticlelList extends Component{
 
     componentDidMount(){
     
-      fetch('http://alexandria-lib-back.herokuapp.com/categories/Sort').then((Response)=> Response.json())
+      fetch('http://alexandria-lib-back.herokuapp.com/categories').then((Response)=> Response.json())
       .then(category =>{
        this.setState({
-        categories:category.articles
+        categories:category
        })
       })
     }
@@ -26,10 +26,13 @@ export default class ArticlelList extends Component{
             return (
               <div className="container">
                 {this.state.categories.map(key=>
-                  <article className="article">
-                 <h2 className="articleTitle">{key.title}</h2>
+                  <article className="categories">
+                 <h2 className="categoryName">{key.name}</h2>
+                 <a href="/">ver</a> 
                   </article>
+                  
                 )}
+                
               </div> 
             )
           }
