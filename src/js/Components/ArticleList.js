@@ -30,13 +30,13 @@ export default class ArticlelList extends Component{
     
       fetch('http://alexandria-lib-back.herokuapp.com/categories/Sort').then((Response)=> Response.json())
       .then(category =>{
-       console.log(category);
+     
        this.setState({
          
          categories:category.articles
        })
-       console.log("holi amiguitos");
-        
+       
+
 
       })
     }
