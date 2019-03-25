@@ -26,19 +26,17 @@ export default class ArticlelList extends Component{
         }
       }
 
-    componentWillMount(){
-      console.log("hola");
-      fetch('https://alexandria-lib-back.herokuapp.com/categories/Sort/articles').then(Response=> Response.json)
-      .then(categories =>{
-       
-        categories.forEach(element => {
-          let data={
-            name:element.title,
-            description:element.content
-          }
-          this.setState({categories:this.state.categories.concat([data])})
-          
-        });
+    componentDidMount(){
+    
+      fetch('http://alexandria-lib-back.herokuapp.com/categories/Sort').then((Response)=> Response.json())
+      .then(category =>{
+       console.log(category);
+       this.setState({
+         
+         categories:category.articles
+       })
+       console.log("holi amiguitos");
+        
 
       })
     }
@@ -47,12 +45,13 @@ export default class ArticlelList extends Component{
       
       
             return (
+             
               <div className="container">
                 {this.state.categories.map(key=>
                   <article className="article">
            
-            <h2 className="article__title">{key.name}</h2>
-            <p className="article__excerpt">{key.description}</p>
+            <h2 className="article__title">{key.title}</h2>
+            
           </article>
 
 
