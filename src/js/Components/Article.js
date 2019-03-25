@@ -1,29 +1,48 @@
 import React, {Component} from 'react';
 import store from '../../Store';
-import {DataTable} from 'primereact/components/datatable/DataTable';
-import {Column} from 'primereact/components/column/Column';
-import {InputText} from 'primereact/components/inputtext/InputText';
 import '../../css/Article.css';
+import axios from 'axios';
 
 
 
 
 class Article extends Component{
     constructor(){ 
-      return super();
+      super();
+      this.state={
+        article:{}
+      }
+    }
+    componentDidMount(){
+    
+      axios.get(`http://alexandria-lib-back.herokuapp.com/categories/Sort/articles/Quick`)
+        .then(res => {
+          const article = res.data;
+          this.setState({ article });
+        })
+    
     }
 
     render(){
-      var details = this.props.details,
-      styles = {
-        backgroundColor: '#' + details.color
-      };
+      
       return (
-        <article className="article">
-          <h3 className="article__category" style={styles}>{details.category}</h3>
-          <h2 className="article__title">{details.title}</h2>
-          <p className="article__excerpt">{details.excerpt}</p>
+        
+        <article id="articleFormat">
+          <section class="article-content">
+          <h2 class="headline">{this.state.article.title}</h2>
+          </section>
+
+
+
+                 <h3 className="subheadline">{this.state.article.title}</h3>
+                 <span>
+                 <blockquote>
+                   {this.state.article.content}
+                 </blockquote>
+                 </span>
+                
         </article>
+       
       );
     }
 

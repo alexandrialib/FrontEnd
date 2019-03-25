@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import store from '../../Store';
-import '../../css/Article.css';
-import Article from './Article';
 
-import ReactDOM from 'react-dom';
+import '../../css/Article.css';
+
+import {browserHistory,Redirect } from 'react-router';
+
 export default class ArticlelList extends Component{
     constructor(){
         super();
@@ -28,6 +28,7 @@ export default class ArticlelList extends Component{
                 {this.state.categories.map(key=>
                   <article className="article">
                  <h2 className="articleTitle">{key.title}</h2>
+        
                   </article>
                 )}
               </div> 

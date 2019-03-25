@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import store from '../../Store';
-import '../../css/Article.css';
-import Article from './Article';
 
-import ReactDOM from 'react-dom';
+import '../../css/Article.css';
+
+import axios from 'axios';
+
 export default class Categories extends Component{
     constructor(){
         super();
@@ -13,26 +13,26 @@ export default class Categories extends Component{
       }
 
     componentDidMount(){
+        axios.get(`http://alexandria-lib-back.herokuapp.com/categories`)
+        .then(res => {
+          const categories = res.data;
+          this.setState({ categories });
+        })
     
-      fetch('http://alexandria-lib-back.herokuapp.com/categories').then((Response)=> Response.json())
-      .then(category =>{
-       this.setState({
-        categories:category
-       })
-      })
+  
     }
     
     render(){ 
             return (
               <div className="container">
                 {this.state.categories.map(key=>
-                  <article className="categories">
-                 <h2 className="categoryName">{key.name}</h2>
-                 <a href="/">ver</a> 
+                  <article className="article">
+                 <h2 className="articleTitle">{key.name}</h2>
+                 <a href={'/'+key.name}>ver</a>
+              
+                 
                   </article>
-                  
                 )}
-                
               </div> 
             )
           }
