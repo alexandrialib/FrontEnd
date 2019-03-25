@@ -30,24 +30,14 @@
 }
 
 .menu-item{
-  text-align: center;
+  display:flex;
+  justify-content: space-around;
+  width: 30%;
+  text-align: left;
   align-self: center
 }
 
 .menu-item a{
   color: rgba(255,255,255,.5);
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
-.menu-item a:active{
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.menu-item a:hover{
-  color: rgba(255,255,255,.75);
-  text-transform: uppercase;
-  text-decoration: none;
 }

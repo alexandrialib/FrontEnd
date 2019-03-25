@@ -1,9 +1,13 @@
 import React,{Component} from 'react';
-
+import {Route, Switch} from 'react-router-dom';
 import '../../css/Article.css';
-
+import ArticleList from './ArticleList';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
-
+const path=(match)=>{
+  
+//<Route path={`${match.path}/:id`} component={ArticleList}/>
+}
 export default class Categories extends Component{
     constructor(){
         super();
@@ -23,12 +27,18 @@ export default class Categories extends Component{
     }
     
     render(){ 
+      
             return (
               <div className="container">
                 {this.state.categories.map(key=>
                   <article className="article">
                  <h2 className="articleTitle">{key.name}</h2>
-                 <a href={'/'+key.name}>ver</a>
+                 <a href={'/categories/'+key.name}>See</a>
+                 <div>
+                   
+                 <Route path={"/categories/"+key.name} component={ArticleList}/>
+                 </div>
+
               
                  
                   </article>

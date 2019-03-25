@@ -11,15 +11,15 @@ import ArticleList from './js/Components/ArticleList';
 import Error404 from './js/404';
 import ArticlelList from './js/Components/ArticleList';
 
-const AppRoutes = () =>
+const AppRoutes = ({match}) =>
   <App>
     <Switch>
       <Route exact path="/" component={Home}/>  
       <Route path="/login" component={Login} />
       <Route path="/categories" component={Categories}/>
       <Route path="/Sort/Quick" component={Article}/>
-      <Redirect from="/categories" to="/sort" component={ArticlelList}/>
-      <Route path="/articles" component={ArticleList}/>
+
+      <Route path="/categories/(:filter)" component={ArticleList}/>
       <Route component={Error404}/>
       
     </Switch>

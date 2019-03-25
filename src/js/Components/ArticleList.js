@@ -3,7 +3,9 @@ import React,{Component} from 'react';
 import '../../css/Article.css';
 
 import {browserHistory,Redirect } from 'react-router';
-
+const pathArticle=({match})=>(<div>
+  <h3>URL ID parameter: {match.params.id}</h3>
+</div>);
 export default class ArticlelList extends Component{
     constructor(){
         super();
@@ -23,6 +25,7 @@ export default class ArticlelList extends Component{
     }
     
     render(){ 
+      
             return (
               <div className="container">
                 {this.state.categories.map(key=>
@@ -33,5 +36,6 @@ export default class ArticlelList extends Component{
                 )}
               </div> 
             )
+      
           }
 }
