@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.headline{
+    font-family: Source Sans Pro;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+.recipe-card {
+  width: 31%;
+  height: 40%;
+  min-width: 240px;
+  margin: 1%;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.recipe-card-image {
+  overflow: hidden;
+  height: 50%;
+}
+
+.recipe-card-image img {
+  width: 100%;
+  /*can add max-height to 
+  make cards same height*/
+}
+
+.recipe-card-content {
+  padding: 16px;
+}
+
+.recipe-title {
+  margin: 0;
+  font-size: 12px;
+}

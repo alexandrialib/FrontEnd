@@ -1,12 +1,15 @@
 import React from 'react'
 import '../../css/Home.css'
-import '../../css/Article.css';
+import '../../css/dashboard.css'
+import Recipe from './Dashboar'
 import { Navbar } from './NavBar';
-import {articleList} from './ArticleList';
+
+
 import logo from '../../images/logo.png'
 import {Link} from 'react-router-dom';
-import {ProjectList} from './ProjectList'
+
 const axios = require('axios');
+
 
 export default class Home extends React.Component{
   
@@ -58,12 +61,66 @@ export default class Home extends React.Component{
        /*  console.log(temporal) */
     document.body.id="";
     return (
-      <div>
+      
+        <div className="home">
+        <Navbar/>
+        <div className="container">
+      
+        <h2 class="headline">Alexandria</h2>
+        
+        </div>
+        
+        <section class="recipe-container">
+        
+          <Recipe 
+            title="Dijkstra’s algorithm"
+            ingredients={["Graph Theory"]}
+            instructions="Given a graph and a source vertex in the graph, find shortest paths from source to all vertices in the given graph."
+            img="https://kjaer.io/images/algorithms/dijkstra.gif"
+          />
+          <Recipe 
+            title="Hamiltonian Cycle"
+            ingredients={["Graph Theory"]}
+            instructions="A Hamiltonian cycle is a closed loop on a graph where every node (vertex) is visited exactly once"
+            img="https://i.imgur.com/3kbCpcf.gif"
+          />
+          <Recipe 
+            title="Binary Search tree"
+            ingredients={["Data Structure"]}
+            instructions="Binary search tree is a data structure."
+            img="https://devopedia.org/images/article/28/2627.1490521240.gif"
+          />
+        </section>
+        <section class="recipe-container">
+        
+        <Recipe 
+          title="Dijkstra’s algorithm"
+          ingredients={["Graph Theory"]}
+          instructions="Given a graph and a source vertex in the graph, find shortest paths from source to all vertices in the given graph."
+          img="https://kjaer.io/images/algorithms/dijkstra.gif"
+        />
+        <Recipe 
+          title="Hamiltonian Cycle"
+          ingredients={["Graph Theory"]}
+          instructions="A Hamiltonian cycle is a closed loop on a graph where every node (vertex) is visited exactly once"
+          img="https://i.imgur.com/3kbCpcf.gif"
+        />
+        <Recipe 
+          title="Binary Search tree"
+          ingredients={["Data Structure"]}
+          instructions="Binary search tree is a data structure."
+          img="https://devopedia.org/images/article/28/2627.1490521240.gif"
+        />
+      </section>
+        
+        </div>
+      
+      /*<div>
         <Navbar menu={menu}/>
         <h1 style={{textAlign:"center",marginTop:100}}>Alexandria</h1>
         <articleList></articleList>
-       {/*  <ProjectList project={temporal}/> */}
-      </div>
+       {/*  <ProjectList project={temporal}/> }
+      </div>*/
     );
   }    
 

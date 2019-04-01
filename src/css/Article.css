@@ -115,4 +115,6 @@ body {
 			padding-bottom: 30px;
 			border-bottom: 1px dotted rgb(160, 160, 160)s;
 		}
-  
+  .home{
+    background:white;
+  }

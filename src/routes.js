@@ -16,10 +16,10 @@ const AppRoutes = ({match}) =>
     <Switch>
       <Route exact path="/" component={Home}/>  
       <Route path="/login" component={Login} />
-      <Route path="/categories" component={Categories}/>
+      <Route exact path="/categories" component={Categories}/>
       <Route path="/Sort/Quick" component={Article}/>
 
-      <Route path="/categories/(:filter)" component={ArticleList}/>
+      <Route path="/categories/:name" component={ArticleList}/>
       <Route component={Error404}/>
       
     </Switch>

@@ -2,27 +2,25 @@ import React,{Component} from 'react';
 import {Route} from 'react-router-dom';
 import '../../css/Article.css';
 import ArticleList from './ArticleList';
-
+import '../../css/dashboard.css'
+import { Navbar } from './NavBar';
 import axios from 'axios';
 import {getAllCategories} from '../DataProvider';
-const path=(match)=>{
-  
-//<Route path={`${match.path}/:id`} component={ArticleList}/>
-}
+
+
 export default class Categories extends Component{
     constructor(){
         super();
-        var path="";
+        const url= "http://alexandria-lib-back.herokuapp.com/categories/";
         this.state={
           categories:[]
         }
       }
 
+
     async componentDidMount(){
       const posts=await getAllCategories("categories");
       console.log(posts.name);
-      
-        
           const categories = posts;
           this.setState({ categories });
 
@@ -31,20 +29,16 @@ export default class Categories extends Component{
     render(){ 
       
             return (
-              <div className="container">
+              <div className="home">
+              <Navbar/>
+              <div className="recipe-card">
                 {this.state.categories.map(key=>
-                  <article className="article">
-                 <h2 className="articleTitle">{key.name}</h2>
-                 <a href={'/categories/'+key.name}>See</a>
-                 <div>
-                   
-                 <Route path={"/categories/"+key.name} component={ArticleList}/>
-                 </div>
-
+                   <div className="recipe-card-content">
+                 <h2 className="recipe-title">{key.name}</h2>
+                 <a href={'/categories/'+key.name} >See</a>
               
-                 
-                  </article>
-                )}
+                 </div>
+                )}</div>
               </div> 
             )
           }
