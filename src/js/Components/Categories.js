@@ -31,7 +31,7 @@ export default class Categories extends Component{
             return (
               <div className="home">
               <Navbar/>
-              <div className="recipe-card">
+              <div className="recipe-card content">
                 {this.state.categories.map(key=>
                    <div className="recipe-card-content">
                  <h2 className="recipe-title">{key.name}</h2>

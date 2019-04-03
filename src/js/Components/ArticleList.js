@@ -32,6 +32,9 @@ export default class ArticlelList extends Component{
                 {this.state.categories.map(key=>
                   <article className="article">
                  <h2 className="articleTitle">{key.title}</h2>
+                 <a href={'/categories/Sort/articles/'+key.title} >See</a>
+                 
+
         
                   </article>
                 )}

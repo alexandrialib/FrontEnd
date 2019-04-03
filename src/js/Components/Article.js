@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import store from '../../Store';
 import '../../css/Article.css';
 import axios from 'axios';
-
+import { Navbar } from './NavBar';
 
 
 
@@ -26,9 +26,11 @@ class Article extends Component{
     render(){
       
       return (
-        
+        <div>
+          <Navbar/>
+        <div className="container">
         <article id="articleFormat">
-          <section class="article-content">
+          <section class="article-content container">
           <h2 class="headline">{this.state.article.title}</h2>
           </section>
 
@@ -41,7 +43,7 @@ class Article extends Component{
                  </blockquote>
                  </span>
                 
-        </article>
+        </article></div></div>
        
       );
     }

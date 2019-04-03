@@ -17,7 +17,7 @@ const AppRoutes = ({match}) =>
       <Route exact path="/" component={Home}/>  
       <Route path="/login" component={Login} />
       <Route exact path="/categories" component={Categories}/>
-      <Route path="/Sort/Quick" component={Article}/>
+      <Route path="/categories/:id/articles/:name" component={Article}/>
 
       <Route path="/categories/:name" component={ArticleList}/>
       <Route component={Error404}/>
