@@ -30,7 +30,7 @@ class Article extends Component{
           <Navbar/>
         <div className="container">
         <article id="articleFormat">
-          <section class="article-content container">
+          <section class="article-content containers">
           <h2 class="headline">{this.state.article.title}</h2>
           </section>
 

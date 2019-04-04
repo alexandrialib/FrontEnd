@@ -2,9 +2,10 @@ import React,{Component} from 'react';
 import {Route} from 'react-router-dom';
 import '../../css/Article.css';
 import ArticleList from './ArticleList';
-import '../../css/dashboard.css'
+
 import { Navbar } from './NavBar';
 import axios from 'axios';
+import Category from './Category'
 import {getAllCategories} from '../DataProvider';
 
 
@@ -30,15 +31,24 @@ export default class Categories extends Component{
       
             return (
               <div className="home">
-              <Navbar/>
-              <div className="recipe-card content">
-                {this.state.categories.map(key=>
-                   <div className="recipe-card-content">
-                 <h2 className="recipe-title">{key.name}</h2>
-                 <a href={'/categories/'+key.name} >See</a>
-              
-                 </div>
-                )}</div>
+                <div className="container">
+                  <Navbar/>
+                </div>
+                <div className="container">
+                   <h2 class="headline">Alexandria</h2>
+                </div>
+                <div className="app">
+                  <div className="container">
+                
+                    {this.state.categories.map(key=>
+                      <Category 
+                      title={key.name}
+                    ingredients={key.articles.map(a=>
+                      a.title)}
+                  />
+                    )}
+                    </div>
+                </div>
               </div> 
             )
           }

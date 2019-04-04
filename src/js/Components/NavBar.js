@@ -3,20 +3,30 @@ import {Link }from 'react-router-dom'
 import '../../css/Toolbar.css'
 import logo from '../../images/logo.png'
 import {SignedLinks} from './SignedLinks'
+import DrawerToggleButton from'./DrawerToggleButton';
 
 export const Navbar = () => (
-   
-      <nav className="nav-wrapper grey darken-3 toolbar left hide-on-med-and-down">
-          <div className="container menu-item">
-            <Link to='/categories' ><img className="bar-logo" src = {logo} alt="logo"/></Link>
-            
-            <Link to='/About' >About</Link>
-            <Link to='/Profile' >Profile</Link>
-            <Link to='/categories' >Categories</Link>
-            <Link to='/login' >Sign in</Link>
-            
+<header>
+ <nav className="toolbar">
+
+    <div className="toolbar-navigation">
+    <div className="toolbar-navigation-logo">
+    <DrawerToggleButton />
+     
+    </div>
+    <div className="spacer"></div>
+          <div className="toolbar-navigation-items">
+            <ul>
+            <li><Link to='/About' >About</Link></li>
+            <li><Link to='/Profile' >Profile</Link></li>
+            <li><Link to='/categories' >Categories</Link></li>
+            <li><Link to='/login' >Sign in</Link></li>
+            </ul>
             
           </div>
-      </nav>
+    
+    </div>
+  </nav>
+</header>
 )
 
