@@ -51,7 +51,7 @@ class Article extends Component{
           </blockquote>
           
           
-          <a href="alexandria-lib-front.herokuapp.com/" class="btn">Back Home</a>
+          <a class="btn">Back Home</a>
         </article>
       </section></div></div>
 
