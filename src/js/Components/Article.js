@@ -14,8 +14,9 @@ class Article extends Component{
       }
     }
     componentDidMount(){
-    
-      axios.get(`http://alexandria-lib-back.herokuapp.com/categories/Sort/articles/Quick`)
+      const title=this.props.location.state.category;
+      const category=this.props.location.state.name;
+      axios.get(`http://alexandria-lib-back.herokuapp.com/categories/`+category+'/articles/'+title)
         .then(res => {
           const article = res.data;
           this.setState({ article });

@@ -1,23 +1,9 @@
 import React, {Component} from 'react';
-
+import {Link} from 'react-router-dom'
 import '../../css/Article.css';
 export default class Category extends Component{
     render(){
-        /*const {title}=this.props;
-            /*const articles=this.props.articles.map((ing,index)=>(
-                <li key={index}>{ing}></li>
-            ));
-        return(
-                <div className="recipe-card">
-                    <div className="recipe-card-content">
-                    <h2 className="recipe-title">{title}</h2>
-                        <h2>Category:</h2>
-                       
-                    </div>
-                </div>
-        
 
-        )*/
         const {title, img} = this.props;
         const ingredients = this.props.ingredients.map((ing, index) => (
                 <li key={index}>{ing}</li>
@@ -37,6 +23,11 @@ export default class Category extends Component{
                     <a href={'/categories/Sort/articles/'+title} >See</a>
                     <ul>{ingredients}</ul>                  
                 </div>
+                <button className="recipe-buttons">
+                <Link to={{pathname:'/categories/'+title,
+                state:{category:title}
+            }}>View Category</Link>
+                </button>
             </article>
             
       </div>
