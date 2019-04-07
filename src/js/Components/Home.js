@@ -3,11 +3,7 @@ import '../../css/Home.css'
 import '../../css/dashboard.css'
 import Recipe from './Dashboar'
 import { Navbar } from './NavBar';
-import SideDrawer from './SideDrawer';
-
-const axios = require('axios');
-
-
+import '../../css/title.scss'
 export default class Home extends React.Component{
   
   render() {
@@ -15,13 +11,26 @@ export default class Home extends React.Component{
     return (
       
         <div className="home">
-      
+           <div className="container">
           <Navbar/>
-       
-          <main>
-            <h2 class="headline">Alexandria</h2>
-            </main>
-            
+          </div> 
+         <div className="container">
+        
+
+         <div id="dust">
+</div>
+<div class="titleHome">
+  <h1>
+    <div>
+      <span></span> 
+      ALEXANDRIA
+      <span></span>
+    </div>
+   
+  </h1>
+
+</div>
+</div>
             <section class="recipe-container">
             
               <Recipe 

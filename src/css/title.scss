@@ -1,0 +1,85 @@
+body {
+  font-family: 'Libre Baskerville',
+    serif;
+  background:white;
+  text-align: center;
+  	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#dust {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.titleHome {
+    transform: scale(0);
+    filter: blur(10px);
+}
+h1 {
+  font-size: 2em;
+  margin-top: 50px;
+  opacity: 1;
+  position: relative;
+  color: rgb(38, 37, 48);
+  font-weight: 400;
+  text-align: center;
+  margin-right: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  border-bottom: 3px solid rgb(38, 37, 48);
+  letter-spacing: 10px;
+
+  > div {
+    position: relative;
+    display: inline-block;
+    + div {
+      display: block;
+    }
+  }
+  span {
+    letter-spacing: normal;
+    display: block;
+    margin-bottom: 10px;
+    font-size: .5em;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+   
+  }
+}
+p {
+font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 14px;
+  letter-spaceing: 5px;
+  line-height:1.2em;
+  
+}
+
+/*ANimation stuff*/
+.titleHome {
+  animation-name: zoomIn;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(.3);
+    filter: blur(10px);
+  }
+  40% {
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+  }
+}

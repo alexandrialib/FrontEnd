@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Route} from 'react-router-dom';
 import '../../css/Article.css';
 import ArticleList from './ArticleList';
-
+import '../../css/title.scss'
 import { Navbar } from './NavBar';
 import axios from 'axios';
 import Category from './Category'
@@ -35,8 +35,22 @@ export default class Categories extends Component{
                   <Navbar/>
                 </div>
                 <div className="container">
-                   <h2 class="headline">Alexandria</h2>
-                </div>
+        
+
+        <div id="dust">
+</div>
+<div class="titleHome">
+ <h1>
+   <div>
+     <span></span> 
+     Categories
+     <span></span>
+   </div>
+  
+ </h1>
+
+</div>
+</div>
                 <div className="app">
                   <div className="container">
                 

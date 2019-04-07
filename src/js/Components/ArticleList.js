@@ -3,7 +3,8 @@ import '../../css/dashboard.css'
 import { Navbar } from './NavBar';
 import '../../css/Article.css';
 import {Link} from 'react-router-dom'
-
+import '../../css/titleBadges.scss'
+import '../../css/title.scss'
 
 const url= "http://alexandria-lib-back.herokuapp.com/categories/";
 export default class ArticlelList extends Component{
@@ -31,24 +32,39 @@ export default class ArticlelList extends Component{
             return (
               <div className="container">
               <Navbar/>
-              <div>
-              <h2 className="articleTitle">{this.state.name}</h2>
-              </div>
-              
-                {this.state.categories.map(key=>
-                  <article className="article">
-                 <h2 className="articleTitle">{key.title}</h2>
-                 <a href={'/categories/Sort/articles/'+key.title} >See</a>
-                 <button className="recipe-buttons">
-                <Link to={{pathname:'/categories/'+this.state.name+'/articles/'+key.title,
-                state:{category:key.title,name:this.state.name}
-            }}>View Category</Link>
-                </button>
-                 
-
+              <div className="container">
         
-                  </article>
-                )}
+
+        <div id="dust">
+</div>
+<div class="titleHome">
+ <h1>
+   <div>
+     <span></span> 
+     {this.state.name}
+     <span></span>
+   </div>
+  
+ </h1>
+
+</div>
+</div>
+            
+              <div className="container">
+                {this.state.categories.map(key=>
+
+<div class="badgee gray">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="216px" height="232px" viewBox="0 0 216 232">
+  <path fill="#2B2B2B" d="M207,0C171.827,0.001,43.875,0.004,9.003,0c-5.619-0.001-9,3.514-9,9c0,28.23-0.006,151.375,0,169    c0.005,13.875,94.499,54,107.999,54S216,191.57,216,178V9C216,3.298,212.732,0,207,0z"/>
+</svg>
+<p class="title">{key.title}</p>
+<button class="subtitle small-btn"><Link style={{color:"white"}}to={{pathname:'/categories/'+this.state.name+'/articles/'+key.title,
+                state:{category:key.title,name:this.state.name}
+          }}>View </Link></button>
+
+</div>
+ 
+                )}</div>
               </div> 
             )
       

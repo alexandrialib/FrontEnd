@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import store from '../../Store';
-import '../../css/Article.css';
+
+import '../../css/articulo.scss';
 import axios from 'axios';
 import { Navbar } from './NavBar';
 
@@ -28,24 +29,32 @@ class Article extends Component{
       
       return (
         <div>
-          <Navbar/>
-        <div className="container">
-        <article id="articleFormat">
-          <section class="article-content containers">
-          <h2 class="headline">{this.state.article.title}</h2>
-          </section>
+          <div className="container">
+          <Navbar/></div>
+          <div class="container">
+        <section class="container">
+        <header>
+          <h1>{this.state.article.title}</h1>
+          <p class="date">
+            By <a >Mads Håkansson</a> 
+            On <a >May 14th 2014</a> 
+            In <a >News</a>
+          </p>
+        </header>
+        
+        <article>
+  
+  
+          <blockquote>
+{this.state.article.content}
+            <cite>John doe</cite>
+          </blockquote>
+          
+          
+          <a href="alexandria-lib-front.herokuapp.com/" class="btn">Back Home</a>
+        </article>
+      </section></div></div>
 
-
-
-                 <h3 className="subheadline">{this.state.article.title}</h3>
-                 <span>
-                 <blockquote>
-                   {this.state.article.content}
-                 </blockquote>
-                 </span>
-                
-        </article></div></div>
-       
       );
     }
 
