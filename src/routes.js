@@ -12,6 +12,7 @@ import Login from './js/Components/Login';
 import Home from './js/Components/Home';
 import ArticleList from './js/Components/ArticleList';
 import Error404 from './js/404';
+import Editor from './js/Components/Editor'
 import ArticlelList from './js/Components/ArticleList';
 
 const AppRoutes = ({match}) =>
@@ -22,7 +23,7 @@ const AppRoutes = ({match}) =>
       <Route path="/login" component={Login} />
       <Route exact path="/categories" component={Categories}/>
       <Route path="/categories/:name/articles/:title" component={Article}/>
-
+      <Route path ="/editor" component={Editor}/>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route component={Error404}/>
       
