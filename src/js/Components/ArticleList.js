@@ -30,7 +30,7 @@ export default class ArticlelList extends Component{
     render(){ 
       
             return (
-              <div className="container">
+              <div className="articleList">
               <Navbar/>
               <div className="container">
         

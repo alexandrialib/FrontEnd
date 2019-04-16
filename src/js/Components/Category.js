@@ -27,24 +27,6 @@ export default class Category extends Component{
  
 </div>
 
-        /*<div className="column">
-
-            <article className="article">
-                
-                <div className="recipe-card-content">
-                    <h3  className="article__category" style={styles}>{title}</h3>
-                    <h2 className="article__title">Articles:</h2>
-                    <a href={'/categories/Sort/articles/'+title} >See</a>
-                    <ul>{ingredients}</ul>                  
-                </div>
-                <button className="recipe-buttons">
-                <Link to={{pathname:'/categories/'+title,
-                state:{category:title}
-            }}>View Category</Link>
-                </button>
-            </article>
-            
-      </div>*/
         );
     }
 

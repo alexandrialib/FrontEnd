@@ -1,11 +1,8 @@
 import React,{Component} from 'react';
-import {Route} from 'react-router-dom';
 import '../../css/Article.css';
-import ArticleList from './ArticleList';
 import '../../css/title.scss'
 import { Navbar } from './NavBar';
-import axios from 'axios';
-import Category from './Category'
+import Category from './Category';
 import {getAllCategories} from '../DataProvider';
 
 
@@ -31,9 +28,8 @@ export default class Categories extends Component{
       
             return (
               <div className="home">
-                <div className="container">
                   <Navbar/>
-                </div>
+     
                 <div className="container">
         
 

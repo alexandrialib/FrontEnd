@@ -1,9 +1,9 @@
 import React from 'react'
-import '../../css/Home.css'
 import '../../css/dashboard.css'
 import Recipe from './Dashboar'
 import { Navbar } from './NavBar';
 import '../../css/title.scss'
+import '../../css/nav.css'
 export default class Home extends React.Component{
   
   render() {
@@ -11,9 +11,8 @@ export default class Home extends React.Component{
     return (
       
         <div className="home">
-           <div className="container">
           <Navbar/>
-          </div> 
+
          <div className="container">
         
 

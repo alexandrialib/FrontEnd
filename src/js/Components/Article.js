@@ -29,8 +29,8 @@ class Article extends Component{
       
       return (
         <div>
-          <div className="container">
-          <Navbar/></div>
+      
+          <Navbar/>
           <div class="container">
         <section class="container">
         <header>
