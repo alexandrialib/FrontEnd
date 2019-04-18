@@ -127,7 +127,7 @@ export const toolsMap = {
   } 
 }
 
-export default {Blackboard, toolsMap};
+export default Blackboard;
 // TOOLS
 export {
   Pencil,
