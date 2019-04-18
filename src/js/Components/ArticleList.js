@@ -32,25 +32,9 @@ export default class ArticlelList extends Component{
             return (
               <div className="articleList">
               <Navbar/>
-              <div className="container">
-        
-
-        <div id="dust">
-</div>
-<div class="titleHome">
- <h1>
-   <div>
-     <span></span> 
-     {this.state.name}
-     <span></span>
-   </div>
-  
- </h1>
-
-</div>
-</div>
             
-              <div className="container">
+            
+              <section class="section-container">
                 {this.state.categories.map(key=>
 
 <div class="badgee gray">
@@ -64,7 +48,7 @@ export default class ArticlelList extends Component{
 
 </div>
  
-                )}</div>
+                )}</section>
               </div> 
             )
       

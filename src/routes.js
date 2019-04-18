@@ -1,9 +1,7 @@
 import React from 'react';
 import {Route, Switch,BrowserRouter} from 'react-router-dom';
 
-import Categoria from './js/Components/model/Categoria'
-
-
+import Comments from './js/Model/CommentList'
 import App from './js/App';
 import Article from './js/Components/Article';
 import Categories from './js/Components/Categories'
@@ -18,14 +16,14 @@ const AppRoutes = ({match}) =>
   <App>
     <Switch>
       <Route exact path="/" component={Home}/>  
-      <Route exact path="/categoria/:title" component={Categoria}/>  
+      <Route exact path="/comments" component={Comments} />
       <Route path="/login" component={Login} />
       <Route exact path="/categories" component={Categories}/>
       <Route path="/categories/:name/articles/:title" component={Article}/>
       <Route path ="/editor" component={Editor}/>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route component={Error404}/>
-      
+    
     </Switch>
   </App>;
 

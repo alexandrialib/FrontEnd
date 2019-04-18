@@ -34,34 +34,3 @@ export const Navbar = () => (
 </header>
 )
 
-/*
-  
- <nav className="toolbar">
-
-    <div className="toolbar-navigation">
-    <div className="toolbar-navigation-logo">
-    <DrawerToggleButton />
-     
-    </div>
-    <div className="spacer"></div>
-          <div className="toolbar-navigation-items">
-            <ul>
-            <li><Link to='/About' >About</Link></li>
-            <li><Link to='/Profile' >Profile</Link></li>
-            <li><Link to='/categories' >Categories</Link></li>
-            <li><Link to='/login' >Sign in</Link></li>
-            </ul>
-            
-          </div>
-    
-    </div>
-  </nav>
-      <div id="resize">
-      <ul id="menu">
-            <li><Link to='/About' >About</Link></li>
-            <li><Link to='/Profile' >Profile</Link></li>
-            <li><Link to='/categories' >Categories</Link></li>
-            <li><Link to='/login' >Sign in</Link></li>
-            </ul>
-      </div>
-*/ 

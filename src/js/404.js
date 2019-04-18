@@ -4,14 +4,31 @@ import '../css/Error.css';
 export default class Error404 extends React.Component {
   render() {
     return (
-      <div>
-        <div className="error-div text-center">
-          <h1>Error 404</h1>
+      <section class="page_404">
+  
+        <div class="row">	
+        <div class="col-sm-12 ">
+        <div class="col-sm-10 col-sm-offset-1  text-center">
+        <div class="four_zero_four_bg">
+          <h3 class="text-center ">404</h3>
+        
+        
         </div>
-        <div className="text-center">
-          <h5>This page cannot be found as her heart <span role="img" aria-label="BreakHearth">💔</span>.</h5>
-        </div>
+        
+        <div class="contant_box_404">
+        <h3 class="h2">
+        Look like you're lost
+        </h3>
+        
+        <h2>the page you are looking for not avaible!</h2>
+        
+        <a href="" class="link_404">Go to Home</a>
       </div>
+        </div>
+        </div>
+        </div>
+      
+    </section>
     )
   }
 }

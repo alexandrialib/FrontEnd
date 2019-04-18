@@ -27,28 +27,11 @@ export default class Categories extends Component{
     render(){ 
       
             return (
-              <div className="home">
+              <div className="App">
                   <Navbar/>
      
-                <div className="container">
-        
-
-        <div id="dust">
-</div>
-<div class="titleHome">
- <h1>
-   <div>
-     <span></span> 
-     Categories
-     <span></span>
-   </div>
-  
- </h1>
-
-</div>
-</div>
-                <div className="app">
-                  <div className="container">
+                  <section class="section-container">
+              
                 
                     {this.state.categories.map(key=>
                       <Category 
@@ -57,9 +40,9 @@ export default class Categories extends Component{
                       a.title)}
                   />
                     )}
-                    </div>
-                </div>
+               
+                </section>
               </div> 
             )
           }
-}
+} 
