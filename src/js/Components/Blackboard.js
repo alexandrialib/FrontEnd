@@ -8,9 +8,8 @@ export const toolsMap = {
   [TOOL_LINE]: Line,
   [TOOL_RECTANGLE]: Rectangle,
   [TOOL_ELLIPSE]: Ellipse
-};
-
-export default class Blackboard extends Component {
+}
+ class Blackboard extends Component {
 
   tool = null;
   interval = null;
@@ -125,5 +124,18 @@ export default class Blackboard extends Component {
         height={height}
       />
     )
-  }
+  } 
 }
+
+export default {Blackboard, toolsMap};
+// TOOLS
+export {
+  Pencil,
+  TOOL_PENCIL,
+  Line,
+  TOOL_LINE,
+  Ellipse,
+  TOOL_ELLIPSE,
+  Rectangle,
+  TOOL_RECTANGLE
+} from './tools';
