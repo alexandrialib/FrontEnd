@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://alexandria-lib-back.herokuapp.com";
+axios.defaults.baseURL = "https://localhost:8080";
 export async function getAllCategories(name) {
   // console.log('entre');
   const { data: posts } = await axios.get(name);
@@ -21,6 +21,7 @@ export async function getArticleFromCategory(category, title) {
 }
 
 export function postUser(user, success, fail) {
+  // console.log(user)
   axios
     .post("/users", user)
     .then(success())
@@ -28,7 +29,7 @@ export function postUser(user, success, fail) {
 }
 
 export function getUser(user, success, fail) {
-  console.log(user);
+  // console.log(user);
   axios({
     method: "get",
     url: "/user",

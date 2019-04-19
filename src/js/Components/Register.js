@@ -32,7 +32,7 @@ export default class Register extends React.Component {
       password: sha256(this.state.password),
       lastName: this.state.lastName
     };
-    postUser(user,console.log,console.log);
+    postUser(this.state,console.log,console.log);
     console.log(user)
   }
 
