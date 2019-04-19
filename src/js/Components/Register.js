@@ -21,10 +21,10 @@ export default class Register extends React.Component {
       lastName: "",
       password: ""
     };
-    this.activateLasers = this.activateLasers.bind(this)
+    this.register = this.register.bind(this)
   }
 
-  activateLasers() {
+  register() {
     var user = {
       username: this.state.username,
       email: this.state.email,
@@ -103,7 +103,7 @@ export default class Register extends React.Component {
               <Button
                 id="register-button"
                 className="p-button-rounded p-button-secondary"
-                onClick={this.activateLasers}
+                onClick={this.register}
                 label="Register"
                 icon="pi pi-check"
               />
