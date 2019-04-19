@@ -6,6 +6,7 @@ import App from './js/App';
 import Article from './js/Components/Article';
 import Categories from './js/Components/Categories'
 import Login from './js/Components/Login';
+import Register from './js/Components/Register';
 import Home from './js/Components/Home';
 import ArticleList from './js/Components/ArticleList';
 import Error404 from './js/404';
@@ -19,6 +20,7 @@ const AppRoutes = ({match}) =>
       <Route exact path="/" component={Home}/>  
       <Route exact path="/comments" component={Comments} />
       <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
       <Route exact path="/categories" component={Categories}/>
       <Route path="/categories/:name/articles/:title" component={Article}/>
       <Route path ="/editor" component={Editor}/>

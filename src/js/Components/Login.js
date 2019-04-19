@@ -36,7 +36,9 @@ export default class Login extends React.Component{
 
             <div className="p-float-label">
               <Button id="login-button" className="p-button-rounded" label="Login" icon="pi pi-check" />
-              <Button id="register-button" className="p-button-rounded p-button-secondary"  label="Register" icon="pi pi-check" />
+              <Link className="forgot-text" to="/register">
+                <Button id="register-button" className="p-button-rounded p-button-secondary"  label="Register" icon="pi pi-check" />
+              </Link>
             </div>
           </form>
           <div className="forgot-text-div">
