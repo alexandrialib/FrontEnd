@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom'
-import { Button } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import { Pencil, TOOL_PENCIL, Line, TOOL_LINE, Ellipse, TOOL_ELLIPSE, Rectangle, TOOL_RECTANGLE } from './tools'
 
 export const toolsMap = {
@@ -115,12 +115,12 @@ export const toolsMap = {
     const {width, height, canvasClassName} = this.props;
     return (
       <div>
-      
-        <Button color="danger" onClick={() => this.initTool(TOOL_PENCIL)}>Pencil</Button>
-        <Button color="danger" onClick={() => this.initTool(TOOL_ELLIPSE)}>Ellipse</Button>
-        <Button color="danger" onClick={() => this.initTool(TOOL_RECTANGLE)}>Rectangle</Button>
-        <Button color="danger" onClick={() => this.initTool(TOOL_LINE)}>Line</Button>
-            
+        <ButtonToolbar>
+          <Button color="danger" onClick={() => this.initTool(TOOL_PENCIL)}>Pencil</Button>
+          <Button color="danger" onClick={() => this.initTool(TOOL_ELLIPSE)}>Ellipse</Button>
+          <Button color="danger" onClick={() => this.initTool(TOOL_RECTANGLE)}>Rectangle</Button>
+          <Button color="danger" onClick={() => this.initTool(TOOL_LINE)}>Line</Button>
+        </ButtonToolbar>   
       <canvas
       ref={(canvas) => { this.canvasRef = canvas; }}
       className={canvasClassName}
