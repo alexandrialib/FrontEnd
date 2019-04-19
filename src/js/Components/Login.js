@@ -8,7 +8,7 @@ import 'primereact/resources/themes/nova-colored/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import {getUser} from "../DataProvider"
-
+import { sha256, sha224 } from "js-sha256";
 
 export default class Login extends React.Component{
   constructor(props) {
@@ -21,6 +21,10 @@ export default class Login extends React.Component{
   }
 
   login(){
+    var cred = {
+      "username":this.state.username,
+      "password":sha256(this.state.password)
+    }
     getUser(this.state,console.log,console.log);
   }
 
