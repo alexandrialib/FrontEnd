@@ -12,7 +12,7 @@ export default (context) => {
       tool: TOOL_RECTANGLE,
       color,
       size,
-      fill,
+      fill:0,
       start: { x, y },
       end: null
     };
