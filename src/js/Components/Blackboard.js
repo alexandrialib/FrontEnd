@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom'
+import { Button } from 'react-bootstrap';
 import { Pencil, TOOL_PENCIL, Line, TOOL_LINE, Ellipse, TOOL_ELLIPSE, Rectangle, TOOL_RECTANGLE } from './tools'
 
 export const toolsMap = {
@@ -17,7 +18,7 @@ export const toolsMap = {
   static propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
-    items: PropTypes.array.isRequired,
+    items: PropTypes.array/*.isRequired*/,
     animate: PropTypes.bool,
     canvasClassName: PropTypes.string,
     color: PropTypes.string,
@@ -35,9 +36,9 @@ export const toolsMap = {
   static defaultProps = {
     width: 500,
     height: 500,
-    color: '#000',
+    color: '',
     size: 5,
-    fillColor: '',
+    fillColor: '#fff',
     canvasClassName: 'canvas',
     debounceTime: 1000,
     animate: true,
@@ -113,16 +114,24 @@ export const toolsMap = {
   render() {
     const {width, height, canvasClassName} = this.props;
     return (
+      <div>
+      
+        <Button color="danger" onClick={() => this.initTool(TOOL_PENCIL)}>Pencil</Button>
+        <Button color="danger" onClick={() => this.initTool(TOOL_ELLIPSE)}>Ellipse</Button>
+        <Button color="danger" onClick={() => this.initTool(TOOL_RECTANGLE)}>Rectangle</Button>
+        <Button color="danger" onClick={() => this.initTool(TOOL_LINE)}>Line</Button>
+            
       <canvas
-        ref={(canvas) => { this.canvasRef = canvas; }}
-        className={canvasClassName}
-        onMouseDown={this.onMouseDown}
-        onMouseMove={this.onMouseMove}
-        onMouseOut={this.onMouseUp}
-        onMouseUp={this.onMouseUp}
-        width={width}
-        height={height}
-      />
+      ref={(canvas) => { this.canvasRef = canvas; }}
+      className={canvasClassName}
+      onMouseDown={this.onMouseDown}
+      onMouseMove={this.onMouseMove}
+      onMouseOut={this.onMouseUp}
+      onMouseUp={this.onMouseUp}
+      width={width}
+      height={height}
+    /></div>
+      
     )
   } 
 }
