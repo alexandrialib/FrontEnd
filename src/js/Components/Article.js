@@ -5,7 +5,9 @@ import CommentList from '../Model/CommentList'
 import '../../css/components/prueba.scss';
 //import '../../css/articulo.scss';
 import axios from 'axios';
+import {getArticleFromCategory}  from '../DataProvider';
 import { Navbar } from './NavBar';
+import Category from './Category';
 
 
 
@@ -13,18 +15,21 @@ class Article extends Component {
   constructor() {
     super();
     this.state = {
+      author:{},
       article: {}
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
     const title = this.props.location.state.category;
     const category = this.props.location.state.name;
-    axios.get(`http://alexandria-lib-back.herokuapp.com/categories/` + category + '/articles/' + title)
-      .then(res => {
-        const article = res.data;
-        this.setState({ article });
-      })
-
+    const posts=await getArticleFromCategory(category,title);
+    console.log(posts.comments);
+    const author=posts.author;
+    this.setState({ author });
+    const article = posts;
+          this.setState({ article });
+  
+      
   }
 
   render() {
@@ -43,7 +48,7 @@ class Article extends Component {
           <section className="left-step">
 
             <h1>{this.state.article.title}</h1>
-            <p class="author">by DOMINICK TURNBULL<br />Published on: 17th March, 2014.</p>
+            <p class="author">{this.state.author.username}<br />Published on: 17th March, 2014.</p>
             <h2>{this.state.article.title}</h2>
 
             <p>{this.state.article.content}</p>
@@ -55,10 +60,11 @@ class Article extends Component {
               
               <div className="comments-conatiner">
               <CommentList/>
-              <Comments/>
+            
               </div>
              
           </section>
+          
           <div class="containe isActive">
     <div class="book">
         <div class="book-paper">
@@ -96,24 +102,3 @@ class Article extends Component {
 
 }
 export default Article;
-/*
- <header>
-          <h1>{this.state.article.title}</h1>
-          <p class="date">
-            By <a >Mads Håkansson</a>
-            On <a >May 14th 2014</a>
-            In <a >News</a>
-          </p>
-        </header>
-
-        <article>
-
-
-          <blockquote>
-{this.state.article.content}
-            <cite>John doe</cite>
-          </blockquote>
-
-
-          <a class="btn">Back Home</a>
-        </article>*/

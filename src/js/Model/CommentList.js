@@ -17,15 +17,15 @@ export default class CommmentList extends Component{
       <input class="form__input"
            type="text" 
            id="comment" 
-         
-           placeholder="say something"
+           placeholder="Write a comment"
            required/>
       <button type="submit" class="btn"><span>POST</span></button>
     </div>
           
         </form>
   
-      <ul class="comments co-content" id="comments">
+      <ul class="comments" id="commentario">
+      <Comment/>
     
       </ul>
     </div>

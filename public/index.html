@@ -53,7 +53,9 @@
   
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+  <script type=”text/babel” src=”js/Article.js”>
 
+  </script>
 <script>
    
           
@@ -63,7 +65,7 @@
                 var comment = $input.val();
                 if (comment != "") {
                   var html = $('<li>').text(comment);
-                  html.prependTo('#comments');
+                  html.prependTo('#commentario');
                
                   $input.val("");
                 }
