@@ -2,7 +2,9 @@ import axios from "axios";
 axios.defaults.baseURL = "https://alexandria-lib-back.herokuapp.com";
 export async function getAllCategories(name){
    // console.log('entre');
-    const {data:posts}= await axios.get(url+name);
+   const { data: posts } = await axios.get(
+    "/" +name
+  );
   return posts;
 
 }
@@ -13,13 +15,7 @@ export async function getCategoryByName(name){
   return posts;
 
 }
-export async function getArticleFromCategory(category,title){
- 
-  const {data:posts}= await axios.get("/categories/"+category+"/articles/"+title);
 
-return posts;
-
-}
 export async function getAllCommentsByArticle(title){
   const {data:posts}= await axios.get("/categories/Sort/articles/Quick/comments");
   return posts;
