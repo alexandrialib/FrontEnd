@@ -10,9 +10,9 @@ export default (context) => {
     ellipse = {
       id: v4(),
       tool: TOOL_ELLIPSE,
-      color,
+      color:'',
       size,
-      fill,
+      fill:0,
       start: { x, y },
       end: null
     };
