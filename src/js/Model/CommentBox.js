@@ -43,7 +43,7 @@ export default class CommentBox extends React.Component {
    render(){
 	   return (
 		<div  id="messages">
-		  <h1>Comments</h1>
+	
 		  <CommentForm onCommentSubmit={comment => this.handleCommentSubmit(comment)} />
 		  <CommentList data={this.state.data} />
 		</div>

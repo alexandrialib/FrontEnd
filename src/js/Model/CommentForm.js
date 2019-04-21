@@ -34,12 +34,13 @@ export default class CommentForm extends React.Component {
 		 <form className="commentForm" onSubmit={(e) => this.handleSubmit(e)}> 
 		
 			 <input
+			 	className="input-content"
 				 type="text"
-				 placeholder="Say something..."
+				 placeholder="Leave a comment"
 				 value={this.state.content}
 				 onChange={(e) => this.handleTextChange(e)} 
 			 /> 
-			 <input type="submit" value="Post" />
+			 <input type="submit" className="boton" value="Post" />
 		 </form>
 	 );	
 	}

@@ -51,10 +51,10 @@ class Article extends Component {
             
             <h2 className="formatArt">COMMENTS</h2>
             
-              <div id="comentarios">
+            
               <CommentBox url={this.state.urlComments} pollInterval={2000} />
             
-              </div>
+            
              
           </section>
           

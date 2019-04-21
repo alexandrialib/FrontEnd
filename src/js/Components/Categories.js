@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import '../../css/Article.css';
-import '../../css/title.scss'
+
 import { Navbar } from './NavBar';
 import Category from './Category';
 import {getAllCategories} from '../DataProvider';

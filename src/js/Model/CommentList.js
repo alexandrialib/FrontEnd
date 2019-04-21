@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Comment from './Comment'
-import '../../css/title.scss'
+
 import '../../css/knowledgeBase/commentList.css'
 export default class CommentList extends React.Component {
 	
