@@ -1,8 +1,7 @@
 import React,{Component} from 'react'
 import CommentList from './CommentList'
 import CommentForm from './CommentForm'
-import $ from 'jquery';
-import axios from 'axios'
+import '../../css/knowledgeBase/commentList.css'
 import {getAllCommentsByArticle,postCommentInArticle}  from '../DataProvider';
 
 export default class CommentBox extends React.Component {
@@ -15,8 +14,6 @@ export default class CommentBox extends React.Component {
 	init(){
 	  this.state = {data: []};
 	}
-  
-  
 	async loadCommentsFromServer() {
 	
 		const posts=await getAllCommentsByArticle(window.location.pathname);
@@ -45,10 +42,10 @@ export default class CommentBox extends React.Component {
   
    render(){
 	   return (
-		<div className="commentBox">
+		<div  id="messages">
 		  <h1>Comments</h1>
-		  <CommentList data={this.state.data} />
 		  <CommentForm onCommentSubmit={comment => this.handleCommentSubmit(comment)} />
+		  <CommentList data={this.state.data} />
 		</div>
 	  );
    }

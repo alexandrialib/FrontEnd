@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import store from '../../Store';
-import Comments from '../Model/Comment'
-import CommentList from '../Model/CommentList'
 import CommentBox from '../Model/CommentBox'
 import '../../css/components/prueba.scss';
-//import '../../css/articulo.scss';
-import axios from 'axios';
 import {getArticleFromCategory}  from '../DataProvider';
 import { Navbar } from './NavBar';
-import Category from './Category';
-
-
-
 class Article extends Component {
   constructor() {
     super();
@@ -25,17 +17,12 @@ class Article extends Component {
     const title = this.props.location.state.category;
     const category = this.props.location.state.name;
     const url=category+"/articles/"+title;
-  console.log("estoy en la clase article"+url)
     const posts=await getArticleFromCategory(category,title);
-  //  console.log(posts.comments);
     const author=posts.author;
     this.setState({ author });
     const article = posts;
           this.setState({ article });
           this.setState({urlComments:url});
-          //console.log(this.state.urlComments)
-  
-      
   }
 
   render() {
@@ -62,7 +49,7 @@ class Article extends Component {
 
             <p>{this.state.article.content}</p>
             
-            <h2>COMMENTS</h2>
+            <h2 className="formatArt">COMMENTS</h2>
             
               <div id="comentarios">
               <CommentBox url={this.state.urlComments} pollInterval={2000} />
