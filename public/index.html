@@ -53,38 +53,10 @@
   
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
-  <script type=”text/babel” src=”js/Article.js”>
+  <script type=”text/babel” src=”js/Components/Article.js”></script>
+   <script src="http://fb.me/react-0.11.1.js"></script>
+	 <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
 
-  </script>
-<script>
-   
-          
-              $('form').submit(function(event) {
-          
-                var $input = $(event.target).find('input');
-                var comment = $input.val();
-                if (comment != "") {
-                  var html = $('<li>').text(comment);
-                  html.prependTo('#commentario');
-               
-                  $input.val("");
-                }
-                
-                return false;
-                
-              });
-            
-</script>
-<script>
-
-  $("#toggle").click(function() {
-
-  $(this).toggleClass('on');
-  $("#resize").toggleClass("active");
-
-  });
-
-
-  </script>
 
 </html>

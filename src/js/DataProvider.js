@@ -16,21 +16,23 @@ export async function getCategoryByName(name){
 
 }
 
-export async function getAllCommentsByArticle(title){
-  const {data:posts}= await axios.get("/categories/Sort/articles/Quick/comments");
+export async function getAllCommentsByArticle(url){
+  console.log("estoy en data provider")
+  console.log(url)
+  const {data:posts}= await axios.get(url+"/comments");
+  
   return posts;
 
 }
-export async function postCommentInArticle(user,comment,success,fail){
+export  function postCommentInArticle(comment,url){
   axios({
     method: "post",
-    url: "/categories/Sort/articles/Quick/comments",
-    auth: user,
+    url: "/categories/"+url+"/comments",
+    auth: {"username":"admin","password":"admin"},
     data: comment
 
   })
-  .then(success())
-  .catch(fail());
+
 }
 export async function getArticleFromCategory(category, title) {
   //console.log(category);console.log(title);

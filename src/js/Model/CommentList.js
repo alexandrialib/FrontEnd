@@ -2,35 +2,27 @@ import React,{Component} from 'react';
 import Comment from './Comment'
 import '../../css/title.scss'
 import '../../css/knowledgeBase/commentList.css'
-export default class CommmentList extends Component{
+export default class CommentList extends React.Component {
+	
+  constructor(props) {
+   super(props);
+  }
  
-    
-    render(){
-        return (
-    
-             
-    <div class="App">
+  render(){
+   
+   let commentNodes = this.props.data.map((comment)=>{
+     return (
+       <Comment author={comment.author} key={comment.id}>
+         {comment.content}
+       </Comment>
+     );
+   });
       
-        <form action="" class="form">
-        <div>
-      <label class="form__label" for="todo">~ COMMENTS ~</label>
-      <input class="form__input"
-           type="text" 
-           id="comment" 
-           placeholder="Write a comment"
-           required/>
-      <button type="submit" class="btn"><span>POST</span></button>
-    </div>
-          
-        </form>
+   return (
+     <div className="commentList">
+       {commentNodes}
+     </div>
+    );	
+  }
   
-      <ul class="comments" id="commentario">
-      <Comment/>
-    
-      </ul>
-    </div>
- 
-      
-        )   
-    }
-}
+ }
