@@ -12,6 +12,7 @@ import ArticleList from './js/Components/ArticleList';
 import Error404 from './js/404';
 import Editor from './js/Components/Editor'
 import Blackboard from './js/Components/Blackboard'
+import Session from './js/Components/Session'
 import ArticlelList from './js/Components/ArticleList';
 
 const AppRoutes = ({match}) =>
@@ -25,6 +26,7 @@ const AppRoutes = ({match}) =>
       <Route path="/categories/:name/articles/:title" component={Article}/>
       <Route path ="/editor" component={Editor}/>
       <Route path ="/blackboard" component={Blackboard}/>
+      <Route path ="/session" component={Session}/>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route component={Error404}/>
     
