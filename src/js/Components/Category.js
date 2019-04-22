@@ -14,14 +14,16 @@ export default class Category extends Component{
             backgroundColor: '#FE5621' 
           };
         return (
-
-<div class="note-container contai">
+           
+<div class="note-container">
       <div class="sticky-note sticky-note-one" >{title}
       <button class="subtitle small-btn"><Link style={{color:"black"}}to={{pathname:'/categories/'+title,
                 state:{category:title}
             }}>View </Link></button>
       </div>
     </div>
+   
+
 
         );
     }

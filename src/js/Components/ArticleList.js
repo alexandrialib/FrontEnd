@@ -35,18 +35,19 @@ export default class ArticlelList extends Component{
             
             
               <section class="section-container">
+              <div className="contai">
                 {this.state.categories.map(key=>
-                <div class="note-container contai">
-                <div class="sticky-note sticky-note-one" >{key.title}
-                <button class="subtitle small-btn"><Link style={{color:"black"}}to={{pathname:'/categories/'+this.state.name+'/articles/'+key.title,
-                state:{category:key.title,name:this.state.name}
+                <div class="note-container">
+                  <div class="sticky-note sticky-note-one" >{key.title}
+                  <button class="subtitle small-btn"><Link style={{color:"black"}}to={{pathname:'/categories/'+this.state.name+'/articles/'+key.title,
+                  state:{category:key.title,name:this.state.name}
                       }}>View </Link></button>
                 </div>
               </div>
 
-
- 
-                )}</section>
+                )}
+                </div>
+                </section>
               </div> 
             )
       

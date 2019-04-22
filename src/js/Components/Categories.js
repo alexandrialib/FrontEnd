@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../../css/Article.css';
+import '../../css/components/sticky.scss';
 
 import { Navbar } from './NavBar';
 import Category from './Category';
@@ -32,14 +33,14 @@ export default class Categories extends Component{
      
                   <section class="section-container">
               
-                
+                <div className="contai">
                     {this.state.categories.map(key=>
                       <Category 
                       title={key.name}
                     ingredients={key.articles.map(a=>
                       a.title)}
                   />
-                    )}
+                    )}</div>
                
                 </section>
               </div> 

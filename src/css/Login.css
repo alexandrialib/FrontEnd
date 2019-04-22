@@ -1,4 +1,4 @@
-#body-login{
+.login{
   /* background-image: linear-gradient(to right bottom, #051937, #0a4066, #006c96, #009cc3, #12cfeb); */
   background: rgb(230, 235, 190);
   background: radial-gradient(circle at center center, rgb(255, 236, 198) 0%, rgb(141, 63, 0) 100%);

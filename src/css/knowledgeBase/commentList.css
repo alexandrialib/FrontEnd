@@ -248,9 +248,7 @@ input:focus {
 }
 button, html [type="button"], [type="reset"], [type="submit"] {
   -webkit-appearance: button;
-  position: absolute;
-  left: 420px;
-  top: 1px;
+
   border-radius: 20px;
 }
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
