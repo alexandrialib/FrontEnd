@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CompactPicker } from "react-color";
+import axios from "axios";
 // import 'flexboxgrid';
 import "../../css/main.css";
 import Card from "@material-ui/core/Card";
@@ -85,13 +86,19 @@ const styles = {
   }
 };
 
-
+const url = "https://alexandria-lib-back.herokuapp.com/sse/paints/";
 
 class WhiteBoard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      lastState:{
+        "version": "2.4.3",
+        "objects": [],
+        "background": "transparent"
+      },
+      id: "5c992f0922a4ae1086a46fd5",
       lineWidth: 10,
       lineColor: "black",
       fillColor: "#68CCCA",
@@ -122,6 +129,20 @@ class WhiteBoard extends React.Component {
       text: "a text, cool!",
       enableCopyPaste: false
     };
+    this.eventSource = new EventSource(url + this.state.id);
+  }
+
+
+  update(param) {
+    console.log(param)
+    this._sketch.fromJSON(param);
+    // if (param.lastUser !== this.state.user) {
+    //   console.log("in udpate", param);
+    //   var x = param.text;
+    //   this.setState({
+    //     aceEditorValue: x.join("\n")
+    //   });
+    // }
   }
 
   _selectTool = event => {
@@ -152,7 +173,6 @@ class WhiteBoard extends React.Component {
     imgDown.dispatchEvent(event);
   };
 
-
   _removeMe = index => {
     let drawings = this.state.drawings;
     drawings.splice(index, 1);
@@ -176,53 +196,51 @@ class WhiteBoard extends React.Component {
   };
 
   _onSketchChange = () => {
-    console.log(this._sketch.toJSON())
-    let prev = this.state.canUndo;
-    let now = this._sketch.canUndo();
-    if (prev !== now) {
-      this.setState({ canUndo: now });
+    if(JSON.stringify(this._sketch.toJSON())==JSON.stringify(this.state.lastState)){
+      console.log("igual, no cambio")
+    }else{    
+      this.setState({lastState: this._sketch.toJSON()})
+      axios.put(url+this.state.id,
+        this._sketch.toJSON()
+        )
+      let prev = this.state.canUndo;
+      let now = this._sketch.canUndo();
+      if (prev !== now) {
+        this.setState({ canUndo: now });
+      }
     }
   };
 
   _addText = () => this._sketch.addText(this.state.text);
 
   componentDidMount = () => {
-    (function(console) {
-      console.save = function(data, filename) {
-        if (!data) {
-          console.error("Console.save: No data");
-          return;
-        }
-        if (!filename) filename = "console.json";
-        if (typeof data === "object") {
-          data = JSON.stringify(data, undefined, 4);
-        }
-        var blob = new Blob([data], { type: "text/json" }),
-          e = document.createEvent("MouseEvents"),
-          a = document.createElement("a");
-        a.download = filename;
-        a.href = window.URL.createObjectURL(blob);
-        a.dataset.downloadurl = ["text/json", a.download, a.href].join(":");
-        e.initMouseEvent(
-          "click",
-          true,
-          false,
-          window,
-          0,
-          0,
-          0,
-          0,
-          0,
-          false,
-          false,
-          false,
-          false,
-          0,
-          null
-        );
-        a.dispatchEvent(e);
-      };
-    })(console);
+    this.eventSource.addEventListener(
+      "open",
+      function(e) {
+        console.log("onopen", e);
+      },
+      false
+    );
+
+    this.eventSource.addEventListener(
+      "error",
+      function(e) {
+        console.log("onerror", e);
+      },
+      false
+    );
+
+    this.eventSource.addEventListener(
+      "message",
+      function(e) {
+        console.log("onmessage", e);
+      },
+      false
+    );
+
+    this.eventSource.addEventListener("paint", e => {
+      this.update(JSON.parse(e.data));
+    });
   };
 
   render = () => {
@@ -238,37 +256,6 @@ class WhiteBoard extends React.Component {
     });
     return (
       <MuiThemeProvider theme={theme}>
-        {/* <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <AppBar title="Sketch Tool" position="static" style={styles.appBar}>
-              <Toolbar>
-              <Typography
-                  variant="h6"
-                  color="inherit"
-                  style={{ marginRight: 18}}
-                  onClick={() => {console.log("Editor")}}
-                >
-                  Editor
-                </Typography>
-                <Typography
-                  variant="h6"
-                  color="inherit"
-                  style={{ flexGrow: 1 }}
-                  onClick={() => {console.log("Paint")}}
-                >
-                  Paint
-                </Typography>
-                
-                <IconButton color="primary" onClick={this._download}>
-                  <DownloadIcon />
-                </IconButton>
-                <IconButton color="primary" onClick={this._clear}>
-                  <DeleteIcon />
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-          </div>
-        </div> */}
         <div className="row">
           <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9">
             <SketchField
@@ -583,7 +570,6 @@ class WhiteBoard extends React.Component {
                       />
                     }
                   />
-                  
                 </CardContent>
               </Collapse>
             </Card>

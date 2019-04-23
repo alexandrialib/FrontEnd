@@ -202,7 +202,7 @@ class Editor extends Component {
           <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9">
             <div className="App">
               <AceEditor
-                style={{width: "100%"}}
+                style={{ width: "100%" }}
                 editorProps={{ $blockScrolling: true }}
                 mode={this.state.mode}
                 onChange={this.onChange}
