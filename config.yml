@@ -1,0 +1,16 @@
+version: 2.1
+description: Orb for firebase deploy.
+commands:
+  deploy:
+    description: Deploy to firebase
+    parameters:
+      token:
+        type: string
+        description: Firebase Deploy Token
+    steps:
+      - run:
+          name: Install Firebase Tools
+          command: npm install --prefix=./firebase-deploy firebase-tools
+      - run:
+          name: Deploy to Firebase
+          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=<< 1/oKCe4mY0YIDOgG2yC_5sZE7odFWq50OeF4-hH813NWid2sjGbbO-f5Q4OuNfWLO- >>
