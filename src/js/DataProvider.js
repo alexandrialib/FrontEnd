@@ -1,5 +1,9 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://alexandria-lib-back.herokuapp.com";
+// export var URL = "https://alexandria-lib-back.herokuapp.com";
+export var URL = "http://localhost:8080";
+axios.defaults.baseURL = URL;
+
+
 export async function getAllCategories(name){
    // console.log('entre');
    const { data: posts } = await axios.get(

@@ -3,7 +3,8 @@
 import React from "react";
 import { CompactPicker } from "react-color";
 import axios from "axios";
-// import 'flexboxgrid';
+import { URL } from "../DataProvider";
+
 import "../../css/main.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -24,12 +25,7 @@ import CopyIcon from "@material-ui/icons/FileCopy";
 import RemoveIcon from "@material-ui/icons/Remove";
 import ZoomInIcon from "@material-ui/icons/ZoomIn";
 import ZoomOutIcon from "@material-ui/icons/ZoomOut";
-// import dataJson from './data.json';
-// import dataJsonControlled from './data.json.controlled';
 import { SketchField, Tools } from "react-sketch";
-// import dataUrl from './data.url';
-import DropZone from "react-dropzone";
-import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import Typography from "@material-ui/core/Typography/Typography";
 
 const styles = {
@@ -86,17 +82,17 @@ const styles = {
   }
 };
 
-const url = "https://alexandria-lib-back.herokuapp.com/sse/paints/";
+const url = URL + "/sse/paints/";
 
 class WhiteBoard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      lastState:{
-        "version": "2.4.3",
-        "objects": [],
-        "background": "transparent"
+      lastState: {
+        version: "2.4.3",
+        objects: [],
+        background: "transparent"
       },
       id: "5c992f0922a4ae1086a46fd5",
       lineWidth: 10,
@@ -132,10 +128,11 @@ class WhiteBoard extends React.Component {
     this.eventSource = new EventSource(url + this.state.id);
   }
 
-
   update(param) {
-    console.log(param)
-    this._sketch.fromJSON(param);
+    if (param !== null) {
+      console.log(param);
+      this._sketch.fromJSON(param);
+    }
     // if (param.lastUser !== this.state.user) {
     //   console.log("in udpate", param);
     //   var x = param.text;
@@ -196,13 +193,14 @@ class WhiteBoard extends React.Component {
   };
 
   _onSketchChange = () => {
-    if(JSON.stringify(this._sketch.toJSON())==JSON.stringify(this.state.lastState)){
-      console.log("igual, no cambio")
-    }else{    
-      this.setState({lastState: this._sketch.toJSON()})
-      axios.put(url+this.state.id,
-        this._sketch.toJSON()
-        )
+    if (
+      JSON.stringify(this._sketch.toJSON()) ==
+      JSON.stringify(this.state.lastState)
+    ) {
+      console.log("igual, no cambio");
+    } else {
+      this.setState({ lastState: this._sketch.toJSON() });
+      axios.put(url + this.state.id, this._sketch.toJSON());
       let prev = this.state.canUndo;
       let now = this._sketch.canUndo();
       if (prev !== now) {

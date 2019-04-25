@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import AceEditor from "react-ace";
 import axios from "axios";
-import { CompactPicker } from "react-color";
-// import 'flexboxgrid';
+import {URL} from '../DataProvider'
+
+
 import "../../css/main.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,26 +11,11 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import CardHeader from "@material-ui/core/CardHeader";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
-import Slider from "@material-ui/lab/Slider";
 import TextField from "@material-ui/core/TextField";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Collapse from "@material-ui/core/Collapse";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import color from "@material-ui/core/colors/blueGrey";
 
-import AddIcon from "@material-ui/icons/Add";
-import CopyIcon from "@material-ui/icons/FileCopy";
-import RemoveIcon from "@material-ui/icons/Remove";
-import ZoomInIcon from "@material-ui/icons/ZoomIn";
-import ZoomOutIcon from "@material-ui/icons/ZoomOut";
-// import dataJson from './data.json';
-// import dataJsonControlled from './data.json.controlled';
-import { SketchField, Tools } from "react-sketch";
-// import dataUrl from './data.url';
-import DropZone from "react-dropzone";
-import Toolbar from "@material-ui/core/Toolbar/Toolbar";
-import Typography from "@material-ui/core/Typography/Typography";
 
 import "brace/mode/java";
 import "brace/mode/python";
@@ -102,7 +88,7 @@ const styles = {
   }
 };
 
-const url = "https://alexandria-lib-back.herokuapp.com/sse/editors/v2/";
+const url = URL+"/sse/editors/v2/";
 
 class Editor extends Component {
   constructor(props) {

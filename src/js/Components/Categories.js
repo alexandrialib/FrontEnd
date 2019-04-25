@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import '../../css/Article.css';
 import '../../css/components/sticky.scss';
+import {URL} from '../DataProvider'
 
 import { Navbar } from './NavBar';
 import Category from './Category';
 import {getAllCategories} from '../DataProvider';
 
-
+const url = URL+"/categories/";
 export default class Categories extends Component{
     constructor(){
         super();
-        const url= "http://alexandria-lib-back.herokuapp.com/categories/";
         this.state={
           categories:[]
         }
