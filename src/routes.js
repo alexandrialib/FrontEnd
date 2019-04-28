@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch,BrowserRouter} from 'react-router-dom';
-
+import About from './js/Components/About'
 import Comments from './js/Model/CommentList'
 import App from './js/App';
 import Article from './js/Components/Article';
@@ -19,6 +19,7 @@ import Session from './js/Components/Session';
 const AppRoutes = ({match}) =>
   <App>
     <Switch>
+      <Route exact path="/About" component={About}/>
       <Route exact path="/" component={Home}/>  
       <Route exact path="/comments" component={Comments} />
       <Route path="/login" component={Login} />

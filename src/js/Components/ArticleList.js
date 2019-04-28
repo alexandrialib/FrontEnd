@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import '../../css/dashboard.css'
-import { Navbar } from './NavBar';
+import  Navbar  from './NavBar';
 import {URL} from '../DataProvider'
 
 import {Link} from 'react-router-dom'

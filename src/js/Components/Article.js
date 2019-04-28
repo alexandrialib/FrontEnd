@@ -3,7 +3,7 @@ import store from '../../Store';
 import CommentBox from '../Model/CommentBox'
 import '../../css/components/prueba.scss';
 import {getArticleFromCategory}  from '../DataProvider';
-import { Navbar } from './NavBar';
+import Navbar  from './NavBar';
 class Article extends Component {
   constructor() {
     super();

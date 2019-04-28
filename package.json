@@ -1,5 +1,5 @@
 {
-  "homepage":"https://alexandrialib.github.io/FrontEnd",
+  "homepage": "https://alexandrialib.github.io/FrontEnd",
   "name": "scrummanager",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,8 @@
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.0",
     "js-sha256": "^0.9.0",
-    "node-sass": "^4.11.0",
+    "mdbreact": "^4.13.0",
+    "node-sass": "^4.12.0",
     "primeicons": "^1.0.0",
     "primereact": "^3.0.0-beta.1",
     "prop-types": "^15.7.2",

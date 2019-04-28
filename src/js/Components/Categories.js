@@ -3,7 +3,7 @@ import '../../css/Article.css';
 import '../../css/components/sticky.scss';
 import {URL} from '../DataProvider'
 
-import { Navbar } from './NavBar';
+import  Navbar  from './NavBar';
 import Category from './Category';
 import {getAllCategories} from '../DataProvider';
 
