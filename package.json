@@ -32,17 +32,15 @@
     "react-showdown": "^1.6.0",
     "react-sketch": "^0.5.1",
     "redux": "^4.0.1",
-    "serve": "^11.0.0",
     "start": "^5.1.0",
     "yarn": "^1.15.2"
   },
   "scripts": {
-    "test": "jest",
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "jest",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
