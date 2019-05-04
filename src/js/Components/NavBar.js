@@ -16,7 +16,7 @@ toggleCollapse = () => {
 
 render() {
   return (
-    <MDBNavbar color="red darken-3" dark expand="md" >
+    <MDBNavbar color="brown darken-3" dark expand="md" >
       <MDBNavbarBrand>
         <strong className="white-text">Alexandria</strong>
       </MDBNavbarBrand>
@@ -32,19 +32,7 @@ render() {
           <MDBNavItem>
             <MDBNavLink to="/About">About</MDBNavLink>
           </MDBNavItem>
-          <MDBNavItem>
-            <MDBDropdown>
-              <MDBDropdownToggle nav caret>
-                <div className="d-none d-md-inline">Dropdown</div>
-              </MDBDropdownToggle>
-              <MDBDropdownMenu className="dropdown-default" right>
-                <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-              </MDBDropdownMenu>
-            </MDBDropdown>
-          </MDBNavItem>
+          
         </MDBNavbarNav>
         <MDBNavbarNav right>
         <MDBNavItem>

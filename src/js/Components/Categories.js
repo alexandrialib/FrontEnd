@@ -7,7 +7,6 @@ import  Navbar  from './NavBar';
 import Category from './Category';
 import {getAllCategories} from '../DataProvider';
 
-const url = URL+"/categories/";
 export default class Categories extends Component{
     constructor(){
         super();
