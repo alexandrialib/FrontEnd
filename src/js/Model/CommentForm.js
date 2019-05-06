@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import {getDOMNode} from 'react-dom';
-import axios from 'axios'
+
 export default class CommentForm extends React.Component {
 	
 	constructor(props) {
@@ -45,4 +44,4 @@ export default class CommentForm extends React.Component {
 	 );	
 	}
 	
- }
+}

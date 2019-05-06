@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import '../../css/knowledgeBase/commentList.css';
 
-export default class Comment extends React.Component {
+export default class Comment extends Component {
 	
  constructor(props) {
   super(props);

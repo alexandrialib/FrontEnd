@@ -4,7 +4,7 @@ import CommentForm from './CommentForm'
 import '../../css/knowledgeBase/commentList.css'
 import {getAllCommentsByArticle,postCommentInArticle}  from '../DataProvider';
 
-export default class CommentBox extends React.Component {
+export default class CommentBox extends Component {
 	
 	constructor(props) {
 	super(props);
