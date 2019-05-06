@@ -184,7 +184,7 @@ class Editor extends Component {
     });
     return (
       <MuiThemeProvider theme={theme}>
-        <div className="row">
+        <div className="row" style={{width:'100%',marginTop:'1%'}}>
           <div className="col-xs-7 col-sm-7 col-md-9 col-lg-9">
             <div className="App">
               <AceEditor
