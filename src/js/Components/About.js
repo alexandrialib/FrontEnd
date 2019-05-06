@@ -31,9 +31,39 @@ class About extends Component{
                                         <ul>
                                             
                                             <li class="instagram">
-                                                <a href="/github.com/blackpahntom96"><i class="fab fa-github"></i></a>
+                                                <a href="http://github.com/blackphantom96"><i class="fab fa-github"></i></a>
                                             </li>
                                             
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <span class="message">
+                                    <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                </span>
+                                
+                                <h4>Juan Moreno</h4>
+                                <span>Backend Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-item">
+                        <div class="item">
+                            <div class="thumb">
+                                <img class="img-fluid" src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="Thumb"/>
+                                <div class="overlay">
+                                    <h4>Lorem Ipsum</h4>
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    </p>
+                                    <div class="social">
+                                        <ul>
+                                           
+                                            <li class="instagram">
+                                                <a href="http://github.com/AlejoGuzm07"><i class="fab fa-github"></i></a>
+                                            </li>
+                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -60,36 +90,7 @@ class About extends Component{
                                         <ul>
                                            
                                             <li class="instagram">
-                                                <a href="/github.com/AlejoGuzm07"><i class="fab fa-github"></i></a>
-                                            </li>
-                                           
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <span class="message">
-                                    <a href="#"><i class="fas fa-envelope-open"></i></a>
-                                </span>
-                                <h4>Juan Moreno</h4>
-                                <span>Backend Developer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 single-item">
-                        <div class="item">
-                            <div class="thumb">
-                                <img class="img-fluid" src="https://i.ibb.co/JC4skS0/team-animate.jpg" alt="Thumb"/>
-                                <div class="overlay">
-                                    <h4>Lorem Ipsum</h4>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </p>
-                                    <div class="social">
-                                        <ul>
-                                           
-                                            <li class="instagram">
-                                                <a href="github.com/YohannaToro"><i class="fab fa-github"></i></a>
+                                                <a href="http://github.com/YohannaToro"><i class="fab fa-github"></i></a>
                                             </li>
                                            
                                         </ul>
