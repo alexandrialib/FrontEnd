@@ -140,7 +140,7 @@ class Editor extends Component {
 
   update(param) {
     if (param.lastUser !== this.state.user) {
-      console.log("in udpate", param);
+      console.log(param)
       var x = param.text;
       this.setState({
         aceEditorValue: x.join("\n")
@@ -148,7 +148,12 @@ class Editor extends Component {
     }
   }
 
-  onChange(newValue) {
+  onChange(newValue,x) {
+    if(x.action === "remove"){
+      console.log(x)
+    }else{
+      console.log(x)
+    }
     axios.post(url + this.state.id, {
       id: this.state.id,
       text: newValue.split("\n"),
