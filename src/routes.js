@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Switch,BrowserRouter} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import About from './js/Components/About'
 import Comments from './js/Model/CommentList'
 import App from './js/App';
@@ -13,9 +13,8 @@ import Error404 from './js/404';
 import Editor from './js/Components/Editor'
 import Blackboard from './js/Components/Blackboard'
 import WhiteBoard from './js/Components/WhiteBoard'
-import ArticlelList from './js/Components/ArticleList';
 import Session from './js/Components/Session';
-
+import profile from './js/Components/UserPage/profile'
 const AppRoutes = ({match}) =>
   <App>
     <Switch>
@@ -31,6 +30,7 @@ const AppRoutes = ({match}) =>
       <Route path ="/whiteboard" component={WhiteBoard}/>
       <Route path ="/session" component={Session}/>
       <Route path="/categories/:title" component={ArticleList}/>
+      <Route path="/profile" component={profile}/>
       <Route component={Error404}/>
     
     </Switch>

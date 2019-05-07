@@ -19,6 +19,17 @@ export async function getCategoryByName(name){
   return posts;
 
 }
+export async function getUserbyUsername(username,password){
+  const {data:post}=await axios({
+    method: "get",
+    url: "/user",
+    auth: {"username":username,"password":password},
+
+
+  })
+  return post;
+
+}
 
 export async function getAllCommentsByArticle(url){
   console.log("estoy en data provider")
@@ -64,4 +75,12 @@ export function getUser(user, success, fail) {
   })
     .then(success)
     .catch(fail);
+}
+export function postCategory(name,user){
+  axios({
+    method:"post",
+    url:"/category"+name,
+    auth: {"username":"admin","password":"admin"},
+    data: name
+  })
 }

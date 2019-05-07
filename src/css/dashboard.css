@@ -4,7 +4,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(248, 230, 204);
+  font: normal normal 13px 'Times New Roman', Times, FreeSerif, serif;
+  background-color:beige;
   background-image: radial-gradient(rgb(184, 147, 95) 7.2%, transparent 0);
    background-size: 25px 25px;
 }
@@ -16,15 +17,11 @@ body {
   width: 100%;
 }
 .rigth-contain{
-
-  width:220px;
-    margin-left:30px;
+    margin-left:10px;
     float:right;
 }
 
-
 .left-contain{
-  overflow:hidden;
   margin: 2rem;
 }
 .headline{

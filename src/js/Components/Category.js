@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import '../../css/titleBadges.scss'
-//import '../../css/Article.css';
 import '../../css/components/sticky.scss';
 
 
