@@ -1,19 +1,17 @@
-
 main {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-  }
-  
-  .extra-margins {
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
-  }
-  .navbar {
-    background-color: #75282ffb;
-  }
-  
-  footer.page-footer {
-    background-color: #75282ffb;
-    margin-top: 2rem;
-  }
-  
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.extra-margins {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+.navbar {
+  background-color: #75282ffb;
+}
+
+footer.page-footer {
+  background-color: #75282ffb;
+  margin-top: 2rem;
+}
