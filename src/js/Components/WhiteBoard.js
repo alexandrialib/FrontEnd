@@ -129,7 +129,7 @@ class WhiteBoard extends React.Component {
   }
 
   update(param) {
-    if (param !== null) {
+    if (param !== null || this._sketch !== null) {
       console.log(param);
       this._sketch.fromJSON(param);
     }
@@ -223,7 +223,7 @@ class WhiteBoard extends React.Component {
     this.eventSource.addEventListener(
       "error",
       function(e) {
-        console.log("onerror", e);
+        // console.log("onerror", e);
       },
       false
     );
