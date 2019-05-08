@@ -1,11 +1,35 @@
 import React from 'react'
 import Card from './Cards'
 import Navbar from './NavBar'
-import Footer from './footer'
 import '../../css/dashboard.css'
-import '../../css/SideList.scss'
+import '../../css/SideList.scss'  
 import '../../css/home.css'
+import Tags from './PrincipalPage/tags'
+import PopulaPost from '../Components/PrincipalPage/PopularPost'
+import {getAllCategories,getCategoryByName} from '../DataProvider'
+
 export default class Home extends React.Component {
+
+  constructor(){
+    super();
+    this.state={
+      articles:{
+        user:{}
+      },
+      popular:[],
+      tagsList:[],
+      popularArticles:[]
+    }
+  }
+  async componentDidMount(){
+    const post= await getAllCategories("categories")
+        this.setState({tagsList:post})
+    const postPopular= await getCategoryByName("Sort");
+    const tmp= await getCategoryByName("Graph theory");
+    const artCat=postPopular.articles;
+    var res = artCat.concat(tmp.articles)
+    this.setState({popular:res,popularArticles:tmp.articles})
+  }
 
   render() {
 
@@ -22,62 +46,34 @@ export default class Home extends React.Component {
   </header>
   <section>
     <div class="content">
-       <div class="item post">
-        <img src="https://cdn-images-1.medium.com/max/1200/1*9QRFQdpO2f59GsN2KsE9XA.png" alt="TITLE HEADING" class="wall-image"/>
-        <div class="post-detail">
-        <h2 class="title-article">Sort</h2>
-        <div class="title-description"><span class="text-des">Title description,</span><span class="time">April 7, 2014</span></div>
-         <div class="post-content">Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-         <div class="bottom">
-           <a href="#"><button class="read-more">Read more</button></a>
-           <lable class="label-comment">
-             Comment <span class="num-of-comment">0</span>
-           </lable>
-         </div>
-      </div>
-     </div>
-        <div class="item post">
-        <img src="https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/11/MorphingShapes_615x400.gif" alt="TITLE HEADING" class="wall-image"/>
-        <div class="post-detail">
-        <h2 class="title-article">Sort</h2>
-        <div class="title-description"><span class="text-des">Title description,</span><span class="time">April 7, 2014</span></div>
-         <div class="post-content">Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-         <div class="bottom">
-           <a href="#"><button class="read-more">Read more</button></a>
-           <lable class="label-comment">
-             Comment <span class="num-of-comment">0</span>
-           </lable>
-         </div>
-      </div>
-     </div>
-        <div class="item post">
-        <img src="https://i.imgur.com/SbMGmW4.gif" alt="TITLE HEADING" class="wall-image"/>
-        <div class="post-detail">
-        <h2 class="title-article">Sort</h2>
-        <div class="title-description"><span class="text-des">Title description,</span><span class="time">April 7, 2014</span></div>
-         <div class="post-content">Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-         <div class="bottom">
-           <a href="#"><button class="read-more">Read more</button></a>
-           <lable class="label-comment">
-             Comment <span class="num-of-comment">0</span>
-           </lable>
-         </div>
-      </div>
-     </div>
-        <div class="item post">
-        <img src="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif" alt="TITLE HEADING" class="wall-image"/>
-        <div class="post-detail">
-        <h2 class="title-article">TOPOSORT</h2>
-        <div class="title-description"><span class="text-des">Title description,</span><span class="time">April 7, 2014</span></div>
-         <div class="post-content">Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-         <div class="bottom">
-           <a href="#"><button class="read-more">Read more</button></a>
-           <lable class="label-comment">
-             Comment <span class="num-of-comment">0</span>
-           </lable>
-         </div>
-      </div>
-     </div>
+            <Card
+              title="Quick"
+              tags={["Sort"]}
+              img="https://i.imgur.com/SbMGmW4.gif"
+            />
+            <Card
+              title="MST"
+              tags={[""]}
+              img="https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/11/MorphingShapes_615x400.gif"
+            />
+            <Card
+              title="Merge"
+              tags={["Sort"]}
+              img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
+            />
+            <Card
+              title="TopoSort"
+              tags={["Graph Theory"]}
+              img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
+            />
+            {this.state.popular.map(key =>
+              <Card
+              title={key.title}
+              tags={["Sort"]}
+              
+              img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
+              />
+              )}        
     </div>
     <aside>
      <div class="profile widget">
@@ -90,45 +86,22 @@ export default class Home extends React.Component {
       <div class="popular-post widget">
         <div class="header">Popular Articles</div>
         <ul class="list-popular-post">
-          
-           <li class="post-item">
-            <img src="https://www.geeksforgeeks.org/wp-content/uploads/Competitive-Programming-1.jpg" alt="Lorem" class="post-image"/>
-            <div class="post-item-info">
-              <h5 class="post-item-title">Sort</h5>
-              <p class="post-item-description">Sed mattis nunc</p>
-            </div>
-          </li>
-           <li class="post-item">
-            <img src="https://www.geeksforgeeks.org/wp-content/uploads/Competitive-Programming-1.jpg" alt="Lorem" class="post-image"/>
-            <div class="post-item-info">
-              <h5 class="post-item-title">Sort</h5>
-              <p class="post-item-description">Sed mattis nunc</p>
-            </div>
-          </li>
-           <li class="post-item">
-            <img src="https://www.geeksforgeeks.org/wp-content/uploads/Competitive-Programming-1.jpg" alt="Lorem" class="post-image"/>
-            <div class="post-item-info">
-              <h5 class="post-item-title">Sort</h5>
-              <p class="post-item-description">Sed mattis nunc</p>
-            </div>
-          </li>
+        {this.state.popularArticles.map(key =>
+        <PopulaPost 
+        title={key.title}/>
+        )}
         </ul>
+      </div>      
+          <div class="tags  header">          
+              <div class="tags-body">
+                {this.state.tagsList.map(key=>
+                <Tags 
+                title={key.name}/>)}
+              </div>
+            </div>
+           </aside>
+        </section>
       </div>
-      <div class="tags  header">
-        
-        <div class="tags-body">
-          <span class="tag tag-orange">Travel</span> <span class="tag tag-red">New York</span>
-          <span class="tag tag-red">London</span>
-          <span class="tag tag-blue">IKEA</span>
-        </div>
-      </div>
-    </aside>
-  </section>
-</div>
-          
-          
-         
-       
       </div>
 
     );

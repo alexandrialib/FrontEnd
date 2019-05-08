@@ -26,7 +26,6 @@ export default class CommentBox extends Component {
 	handleCommentSubmit(comment) {
 	  let comments = this.state.data;
 	  var url=this.props.url;
-	console.log("handle"+url)
 
 	  var newComments = comments.concat([comment]);
 	  this.setState({data: newComments});  
