@@ -15,6 +15,7 @@ import Blackboard from './js/Components/Blackboard'
 import WhiteBoard from './js/Components/WhiteBoard'
 import Session from './js/Components/Session';
 import profile from './js/Components/UserPage/profile'
+import SingIn from './js/Components/RegisterForm/SingIn'
 const AppRoutes = ({match}) =>
   <App>
     <Switch>
@@ -31,6 +32,7 @@ const AppRoutes = ({match}) =>
       <Route path ="/session" component={Session}/>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route path="/profile" component={profile}/>
+      <Route exact path="/singin" component={SingIn}/>
       <Route component={Error404}/>
     
     </Switch>

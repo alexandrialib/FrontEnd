@@ -60,7 +60,7 @@ render() {
                 <MDBIcon icon="user" />
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default" right>
-                <MDBDropdownItem href="#!">Sing in</MDBDropdownItem>
+                <MDBDropdownItem href="/singin">Sing in</MDBDropdownItem>
                 <MDBDropdownItem href="/login">login</MDBDropdownItem>
                 
               </MDBDropdownMenu>

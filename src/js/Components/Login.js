@@ -52,7 +52,7 @@ export default class Login extends React.Component{
 
             <div className="p-float-label">
               <Button id="login-button" onClick={this.login} className="p-button-rounded" label="Login" icon="pi pi-check" />
-              <Link className="forgot-text" to="/register">
+              <Link className="forgot-text" to="/profile">
                 <Button id="register-button" className="p-button-rounded p-button-secondary"  label="Register" icon="pi pi-check" />
               </Link>
             </div>
