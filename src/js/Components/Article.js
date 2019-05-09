@@ -4,6 +4,8 @@ import CommentBox from '../Model/CommentBox'
 import '../../css/components/prueba.scss';
 import {getArticleFromCategory}  from '../DataProvider';
 import Navbar  from './NavBar';
+import Markdown from 'react-markdown'
+
 class Article extends Component {
   constructor() {
     super();
@@ -47,8 +49,9 @@ class Article extends Component {
             <p>{this.state.article.content}</p>
             <p class="pullquote">These new devices are radically transforming what is possible in digital visual design and this has radical implications for digital typography. </p>
 
-            <p>{this.state.article.content}</p>
-            
+            <Markdown 
+            source= {this.state.article.content}
+            />
             <h2 className="formatArt">COMMENTS</h2>
             
             

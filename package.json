@@ -27,6 +27,7 @@
     "react-color": "^2.17.0",
     "react-dom": "^16.7.0",
     "react-dropzone": "^10.1.4",
+    "react-markdown": "^4.0.8",
     "react-notifications-component": "^1.1.1",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
