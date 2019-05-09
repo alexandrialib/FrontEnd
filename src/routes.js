@@ -16,6 +16,7 @@ import WhiteBoard from './js/Components/WhiteBoard'
 import Session from './js/Components/Session';
 import profile from './js/Components/UserPage/profile'
 import SingIn from './js/Components/RegisterForm/SingIn'
+import SingUp from './js/Components/RegisterForm/SingUp'
 const AppRoutes = ({match}) =>
   <App>
     <Switch>
@@ -33,6 +34,7 @@ const AppRoutes = ({match}) =>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route path="/profile" component={profile}/>
       <Route exact path="/singin" component={SingIn}/>
+      <Route exact path="/singup" component={SingUp}/>
       <Route component={Error404}/>
     
     </Switch>
