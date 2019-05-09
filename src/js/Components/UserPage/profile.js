@@ -1,11 +1,16 @@
 import React,{Component} from 'react'
 import Navbar from '../NavBar';
-import {getUserbyUsername} from '../../DataProvider'
+import {getUserbyUsername, getArticleFromCategory, getCategoryByName} from '../../DataProvider'
 import Notification from '../notification'
+import CategoryBox from '../UserPage/TeacherComponents/CategoryBox'
+import PopularPost from '../PrincipalPage/PopularPost'
 import '../../../css/UserPage/profile.scss'
+import '../../../css/home.css'
+
+
 export default class profile extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
             user:{},
             monitorias:[],
@@ -13,42 +18,60 @@ export default class profile extends Component{
         }
     }
     async componentDidMount(){
-        const post =await getUserbyUsername("user","user");
-        console.log(post)
-        this.setState({user:post})
+        const user = this.props.location.state.user;
+        const pass = this.props.location.state.pass;
+        const postPopular= await getCategoryByName("Sort");
+        const artCat=postPopular.articles
+        console.log("hiiiiii")
+        console.log(artCat)
+        this.setState({articulosSuscritos:artCat})
+        if(user==="user" && pass==="user"){
+            console.log("")
+            const post =await getUserbyUsername(this.props.location.state.user,this.props.location.state.pass);
+            this.setState({user:post})
+        }else{
+            console.log("yaper")
+        }
+        /*   {isLoggedIn ? (
+        <LogoutButton onClick={this.handleLogoutClick} />
+      ) : (
+        <LoginButton onClick={this.handleLoginClick} />
+      )}*/
+      
+        
     }
     render(){
         return(
             <div className="App">
                 <Navbar/>
-             
+                <div class="profile clearfix">
+                    <div class="avatar-container">
+                        <img class="avatar" src="http://farm3.staticflickr.com/2721/4531285963_cd28f61b16_q.jpg"/>
+                        <div class="avatar-text">  
+                            <h1>{this.state.user.username}</h1>
+                            <h2>TEACHER</h2>
+                        </div>
+                    </div>
+                </div>   
+                <div className="post-it-art">
+                <CategoryBox/>
+                
 
-<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'/>
-
-<div align="center" class="fond">
-
-    <a href="www.wifeo.com">
-    <div class="principal">
-      <div class="principal_petit">
-        <div class="principal_img">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/img_scale_sociaux.png" border="0" align="center"/>
-        </div>
-      </div>
-    </div>
-  </a>
-
-  <div className="cambio">{this.state.user.username} </div>
-        
-  
-  
-</div>
-
-
-                <div>
-                    <Notification />
+                </div> 
+                <div className="buttonArticle">
+                <p><button class="btn-right"><a href="/newArticle">ADD ARTICLE</a></button></p>
                 </div>
-            
+                
+            <div class="popular-post widget">
+                <div class="header">Articles</div>
+                <ul class="list-popular-post">
+                    {this.state.articulosSuscritos.map(key =>
+                        <PopularPost 
+                        title= {key.title}/>
+                    )}
+                    </ul>
             </div>
+        </div>
         )
     }
 

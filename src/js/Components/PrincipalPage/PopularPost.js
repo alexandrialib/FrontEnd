@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import '../../../css/home.css'
 export default class PopularPost extends Component{
     render(){
         const {title} = this.props;

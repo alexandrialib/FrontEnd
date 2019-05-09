@@ -16,10 +16,14 @@ class Article extends Component {
     }
   }
   async componentDidMount() {
-    const title = this.props.location.state.category;
-    const category = this.props.location.state.name;
-    const url=category+"/articles/"+title;
-    const posts=await getArticleFromCategory(category,title);
+    //const title = this.props.location.state.category;
+    //const category = this.props.location.state.name;
+    const articleUrl= window.location.pathname;
+   var urlsplit = articleUrl.split("/");
+ //  console.log(urlsplit)
+  
+    const url=articleUrl;
+    const posts=await getArticleFromCategory(urlsplit[2],urlsplit[4]);
     const author=posts.author;
     this.setState({ author });
     const article = posts;

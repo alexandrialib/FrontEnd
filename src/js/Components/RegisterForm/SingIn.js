@@ -4,14 +4,24 @@ import '../../../css/RegisterForm/SingIn.css'
 import { prototype } from "events";
 import {getUser} from "../../DataProvider"
 import { sha256, sha224 } from "js-sha256";
+
+import {Link} from 'react-router-dom'
+import Profile from '../UserPage/profile'
 export default class SingIn extends Component {
     constructor(){
         super();
         this.state={
+            
             username:"",
             password:""
         }
         this.login = this.login.bind(this)
+    }
+
+    onChange = (e) => {
+      this.setState({
+        [e.target.name]: e.target.value,
+      });
     }
     login(){
         var cred = {
@@ -19,6 +29,12 @@ export default class SingIn extends Component {
           "password":sha256(this.state.password)
         }
         getUser(this.state,console.log,console.log);
+      }
+      onSubmit = async () => {
+        const response = await getUser(this.state,console.log,console.log)
+        console.log("kakak"+response)
+     
+        
       }
 
     render(){
@@ -35,9 +51,11 @@ export default class SingIn extends Component {
               </div>
               <MDBInput
                 label="Username"
+                name="username"
                 icon="user"
                 group
                 type="email"
+                onChange={e => this.onChange(e)}
                 value={this.state.username}
                 onChange={(e) => this.setState({username: e.target.value})}
                 validate
@@ -47,9 +65,10 @@ export default class SingIn extends Component {
               <MDBInput
                 label="Password"
                 icon="lock"
+                name="password"
                 group
+                onChange={e => this.onChange(e)}
                 value={this.state.password}
-                onChange={(e) => this.setState({password: e.target.value})}
                 type="password"
                 validate
                 containerClass="mb-0"
@@ -66,11 +85,15 @@ export default class SingIn extends Component {
                   type="button"
                   color="red darken-3"
                   rounded
-                  href="/profile"
-                  onClick={this.login}
+                  href="/singin"
+                  onClick={() => this.onSubmit()}
                   className="btn-block z-depth-1a"
+                 
                 >
-                  Sign in
+                 <Link style={{color:"white"}}to={{pathname:'/profile',
+                state:{user:this.state.username,pass:this.state.password}
+            }}>Sign in </Link>
+                  
                 </MDBBtn>
               </div>
               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">

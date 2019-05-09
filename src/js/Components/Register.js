@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import "../../css/Login.css";
 import logo from "../../images/logo.png";
 import { InputText } from "primereact/inputtext";
@@ -113,4 +113,4 @@ export default class Register extends React.Component {
       </div>
     );
   }
-}
+}*/

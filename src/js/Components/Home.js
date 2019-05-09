@@ -14,7 +14,8 @@ export default class Home extends React.Component {
     super();
     this.state={
       articles:{
-        user:{}
+        user:{},
+        cate:[]
       },
       popular:[],
       tagsList:[],
@@ -23,6 +24,7 @@ export default class Home extends React.Component {
   }
   async componentDidMount(){
     const post= await getAllCategories("categories")
+  
         this.setState({tagsList:post})
     const postPopular= await getCategoryByName("Sort");
     const tmp= await getCategoryByName("Graph theory");
@@ -49,11 +51,13 @@ export default class Home extends React.Component {
             <Card
               title="Quick"
               tags={["Sort"]}
+              refe="/categories/Sort/articles/Quick"
               img="https://i.imgur.com/SbMGmW4.gif"
             />
             <Card
               title="MST"
-              tags={[""]}
+              tags={["Graph theory"]}
+              refe="/categories/Graph%20theory/articles/MST"
               img="https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/11/MorphingShapes_615x400.gif"
             />
             <Card
@@ -64,19 +68,20 @@ export default class Home extends React.Component {
             <Card
               title="TopoSort"
               tags={["Graph Theory"]}
+              refe="/categories/Graph%20theory/articles/TopoSort"
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
             />
             {this.state.popular.map(key =>
               <Card
               title={key.title}
               tags={["Sort"]}
-              
+              refe={"/categories/Sort/articles/"+key.name}
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
               />
               )}        
     </div>
     <aside>
-     <div class="profile widget">
+     <div class="profilee widget">
        <img src="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif" alt="My Name" class="user-image"/>
        <div class="user-info">
        <h3 class="user-name">TopoSort</h3>

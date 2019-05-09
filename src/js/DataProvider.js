@@ -5,7 +5,7 @@ axios.defaults.baseURL = URL;
 
 
 export async function getAllCategories(name){
-   // console.log('entre');
+ ;
    const { data: posts } = await axios.get(
     "/" +name
   );
@@ -13,9 +13,9 @@ export async function getAllCategories(name){
 
 }
 export async function getCategoryByName(name){
-   // console.log('entre aqui');
+ 
     const {data:posts}= await axios.get("/categories/"+name);
-    //console.log("holi");
+ 
   return posts;
 
 }
@@ -32,8 +32,7 @@ export async function getUserbyUsername(username,password){
 }
 
 export async function getAllCommentsByArticle(url){
-  console.log("estoy en data provider")
-  console.log(url)
+
   const {data:posts}= await axios.get(url+"/comments");
   
   return posts;
@@ -50,37 +49,37 @@ export  function postCommentInArticle(comment,url){
 
 }
 export async function getArticleFromCategory(category, title) {
-  //console.log(category);console.log(title);
+  
   const { data: posts } = await axios.get(
     "/categories/" + category + "/articles/" + title
   );
-  //console.log("holi");
+
   return posts;
 }
 
 export function postUser(user, success, fail) {
-  // console.log(user)
+ 
   axios
     .post("/users", user)
     .then(success())
     .catch(fail());
 }
 
-export function getUser(user, success, fail) {
-  // console.log(user);
-  axios({
+export async function getUser(user, success, fail) {
+  return await axios({
     method: "get",
     url: "/user",
     auth: user
   })
     .then(success)
     .catch(fail);
+    
 }
-export function postCategory(name,user){
+export function postCategory(name,user){ 
   axios({
     method:"post",
-    url:"/category"+name,
+    url:"/categories",
     auth: {"username":"admin","password":"admin"},
-    data: name
+    data: {"name":name}
   })
 }

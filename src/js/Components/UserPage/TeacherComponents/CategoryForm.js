@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import '../../../../css/UserPage/categoryPost.scss'
 export default class CategoryForm extends Component{
     constructor(props) {
         super(props);
@@ -19,26 +19,26 @@ export default class CategoryForm extends Component{
         handleSubmit(e) {
             e.preventDefault();
            
-            var text 		= this.state.content.trim();
+            var text= this.state.content.trim();
             if (!text) {
                 return;
             }
-            this.props.onCommentSubmit({author: {username:"Anonymus"}, content: text});
+            this.props.onCommentSubmit({content: text});
             this.setState({content: ''});
         }	
     
        render(){
         return (
-            <form className="commentForm" onSubmit={(e) => this.handleSubmit(e)}> 
+            <form className="note" onSubmit={(e) => this.handleSubmit(e)}> 
            
                 <input
-                    className="input-content"
+                    className="inputCat"
                     type="text"
                     placeholder="write a category"
                     value={this.state.content}
                     onChange={(e) => this.handleTextChange(e)} 
                 /> 
-                <input type="submit" className="boton" value="Post" />
+                <input type="submit" className="inputCat" value="Post" />
             </form>
         );	
        }

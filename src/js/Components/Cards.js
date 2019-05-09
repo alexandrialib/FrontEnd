@@ -3,7 +3,7 @@ import '../../css/components/Card.scss';
 
 export default class Card extends Component{
     render(){
-        const {title, img,author,content} = this.props;
+        const {title, img,author,content,refe} = this.props;
         const tags = this.props.tags.map((ing, index) => (
                 <li key={index}>{ing}</li>
             ));
@@ -27,7 +27,7 @@ export default class Card extends Component{
       <h2>Opening a door to the future</h2>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta.</p>
     <p class="read-more">
-        <a href="#">Read More</a>
+        <a href={refe}>Read More</a>
       </p>
   </div>
              

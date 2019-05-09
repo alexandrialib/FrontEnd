@@ -9,12 +9,20 @@ export default class SingUp extends Component {
     constructor(){
         super();
         this.state={
+          user:{
+            usern:"",
+            pass:""
+          },
             username:"",
             password:""
         }
         this.login = this.login.bind(this)
     }
+    handleTextChange(e) {
+      this.setState({content: e.target.value});
+    }
     login(){
+      console.log("sera que esta monda si sirve")
         var cred = {
           "username":this.state.username,
           "password":sha256(this.state.password)
@@ -40,7 +48,7 @@ export default class SingUp extends Component {
                 icon="user"
                 group
                 type="email"
-                value={this.state.username}
+                value={this.state.user.usern}
                 onChange={(e) => this.setState({username: e.target.value})}
                 validate
                 error="wrong"
@@ -60,7 +68,7 @@ export default class SingUp extends Component {
                 label="Password"
                 icon="lock"
                 group
-                value={this.state.password}
+                value={this.state.user.pass}
                 onChange={(e) => this.setState({password: e.target.value})}
                 type="password"
                 validate
