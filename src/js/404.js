@@ -22,7 +22,7 @@ export default class Error404 extends React.Component {
         
         <h2>the page you are looking for not avaible!</h2>
         
-        <a href="" class="link_404">Go to Home</a>
+        <a href="/" class="link_404">Go to Home</a>
       </div>
         </div>
         </div>
