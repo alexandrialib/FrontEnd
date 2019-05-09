@@ -30,6 +30,7 @@ export class ArticleEditor extends Component {
       <div className="row">
       <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <AceEditor 
+        style={{width:"100%"}}
           mode="markdown" 
           theme="monokai"
           value={this.state.text} 
