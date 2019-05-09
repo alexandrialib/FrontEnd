@@ -86,15 +86,15 @@ a {
   }
 }
 
-p {
-  font-family: 'Josefin Sans', sans-serif;
-  text-transform: uppercase;
-  color: BLACK;
-  margin-top: 14px;
-  letter-spaceing: 5px;
-  line-height: 1.2em;
-  font-size:10px;
-}
+// p {
+//   font-family: 'Josefin Sans', sans-serif;
+//   text-transform: uppercase;
+//   color: BLACK;
+//   margin-top: 14px;
+//   letter-spaceing: 5px;
+//   line-height: 1.2em;
+//   font-size:10px;
+// }
 
 
 .blog-card {
@@ -231,22 +231,22 @@ p {
       }
     }
   }
-  p {
-    position: relative;
-    margin: 1rem 0 0;
-    &:first-of-type {
-      margin-top: 1.25rem;
-      &:before {
-        content: "";
-        position: absolute;
-        height: 5px;
-        background: $color_prime;
-        width: 35px;
-        top: -0.75rem;
-        border-radius: 3px;
-      }
-    }
-  }
+  // p {
+  //   position: relative;
+  //   margin: 1rem 0 0;
+  //   &:first-of-type {
+  //     margin-top: 1.25rem;
+  //     &:before {
+  //       content: "";
+  //       position: absolute;
+  //       height: 5px;
+  //       background: $color_prime;
+  //       width: 35px;
+  //       top: -0.75rem;
+  //       border-radius: 3px;
+  //     }
+  //   }
+  // }
 
   &:hover {
     .details {

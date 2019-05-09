@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Markdown from 'react-markdown'
 import PropTypes from 'prop-types'
 import AceEditor from 'react-ace';
-import CodeBlock from 'react-markdown'
 
 import "brace/mode/markdown";
 import "brace/theme/monokai";
@@ -28,15 +27,20 @@ export class ArticleEditor extends Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
+      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <AceEditor 
-        mode="markdown" 
-        theme="monokai"
-        value={this.state.text} 
-        onChange={this.onChange}/>
+          mode="markdown" 
+          theme="monokai"
+          value={this.state.text} 
+          onChange={this.onChange}/>
+
+      </div>
+      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <Markdown 
         source= {this.state.text} 
         />
+        </div>
       </div>
     )
   }
