@@ -1,11 +1,11 @@
 import '../../../../css/UserPage/markEdit.scss'
 import React,{Component} from 'react'
-import ReactDOM from 'react-dom'
-import { marked } from 'marked'
+import ArticleForm from './postArticle/newArticleForm'
 import NavBari from './../../NavBar'
 import Editor from './Editor'
 import Preview from './preview'
-import { Navbar } from 'mdbreact';
+import {postArticle} from '../../../DataProvider'
+import NewArticleBox from '../MarkDown/postArticle/newArticleBox'
 
 
 
@@ -85,12 +85,25 @@ export default class Appi extends Component {
 			status: "Markdown cleared"
 		});
 	}
+	async addArticle(category){
+		console.log(category.category+"perro jiji")
+		console.log(this.state.markdown)
+		
+        console.log("esto no sirve"+ category.content)
+        postArticle(category.category,{"title":category.title,"content":this.state.markdown});
+        
+       
+    }
 
 	render() {
 		return (
 			<div className="markdown-app">
             <NavBari />
-				<h1 className="sr-only">Simple React Markdown Editor and Preview App</h1>
+			
+					
+			<ArticleForm onCommentSubmit={category => this.addArticle(category)} />
+					
+				
 				<main className="panes">
 					<Editor
 						handler={this.updateMarkdown}

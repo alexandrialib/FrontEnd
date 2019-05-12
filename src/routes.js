@@ -5,8 +5,6 @@ import Comments from './js/Model/CommentList'
 import App from './js/App';
 import Article from './js/Components/Article';
 import Categories from './js/Components/Categories'
-//import Login from './js/Components/Login';
-//import Register from './js/Components/Register';
 import Home from './js/Components/Home';
 import ArticleList from './js/Components/ArticleList';
 import Error404 from './js/404';
@@ -18,10 +16,12 @@ import profile from './js/Components/UserPage/profile'
 import SingIn from './js/Components/RegisterForm/SingIn'
 import reactMArk from './js/Components/UserPage/MarkDown/markdonw-editor'
 import SingUp from './js/Components/RegisterForm/SingUp'
-import { ArticleEditor } from './js/Components/ArticleEditor';
+import FormArt from './js/Components/UserPage/MarkDown/postArticle/newArticleBox'
+
 const AppRoutes = ({match}) =>
   <App>
     <Switch>
+      <Route exact path="/newArtF" component={FormArt}/>
       <Route exact path="/About" component={About}/>
       <Route exact path="/" component={Home}/>  
       <Route exact path="/comments" component={Comments} />

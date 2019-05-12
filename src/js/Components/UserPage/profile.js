@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import Navbar from '../NavBar';
 import {getUserbyUsername, getArticleFromCategory, getCategoryByName} from '../../DataProvider'
 import Notification from '../notification'
+import ArticleBox from './MarkDown/postArticle/newArticleBox'
 import CategoryBox from '../UserPage/TeacherComponents/CategoryBox'
 import PopularPost from '../PrincipalPage/PopularPost'
 import '../../../css/UserPage/profile.scss'
@@ -56,11 +57,11 @@ export default class profile extends Component{
                 <div className="post-it-art">
                 <CategoryBox/>
                 
-
                 </div> 
                 <div className="buttonArticle">
                 <p><button class="btn-right"><a href="/newArticle">ADD ARTICLE</a></button></p>
                 </div>
+                
                 
             <div class="popular-post widget">
                 <div class="header">Articles</div>

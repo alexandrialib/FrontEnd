@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,300,700);
+
+$dark: #363636;
+$light: #F2E8DC;
+
+$primary: #f15922;
+$secondary: #7dd4e8;
+$third: #F6C948;
+
+$primary-font: 'Comfortaa', cursive;
+
+body {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/690874/bg-nath-2.png');
+    font-family: $primary-font;
+    height:100%;
+    box-sizing: border-box;
+}
+
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "Roboto-Regular";
+}
+.profile-pic{
+	padding-top: 40px;
+	height: 250px;
+}
+.profile-pic img{
+	width: 250px;
+	position: relative;
+	left: calc(50% - 125px);
+	transition: all .3s;
+}
+
+.signin{
+	padding-top: 40px;
+}
+.signin form{
+	margin: 0px auto;
+	display: table;
+}
+.obese{
+  width: 2005;
+  overflow:visible;
+}
+.input-group {
+  position: relative;
+  display: table-cell;
+  margin-bottom: 40px;
+}
+.input-group input {
+  padding: 10px 0px;
+}
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  -webkit-transform: translateY(-30%);
+  transform: translateY(-30%);
+  font-style: italic;
+  font-size: 18px;
+  color: #7E827B;
+  pointer-events: none;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+.input-group input:focus + label,
+.input-group input.has-value + label {
+  top: -10px;
+  font-size: 12px;
+  color: #7E827B;
+}
+.input1 {
+	width: 300px;
+  background: none;
+  border: solid 2px #00B394;
+  color: #00B394;
+  padding: 15px 40px;
+  font-size: 24px;
+  display: inline-block;
+}
+.input1:focus,.input1:active {
+  outline: none;
+}
+.input1[type="text"], .input1[type="email"] {
+  border: none;
+  border-bottom: solid 2px #00B394;
+}
+.input1[type="submit"]:active {
+  color: white;
+  background: #00B394;
+}
+
+@media screen and (max-width: 500px){
+	.profile-pic{
+		height: 200px;
+	}
+	.profile-pic img{
+		width: 200px;
+		left: calc(50% - 100px);
+	}	
+
+	input {
+		width: 200px;
+  	font-size: 18px;
+	}
+}
