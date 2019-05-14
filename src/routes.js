@@ -17,6 +17,7 @@ import SingIn from './js/Components/RegisterForm/SingIn'
 import reactMArk from './js/Components/UserPage/MarkDown/markdonw-editor'
 import SingUp from './js/Components/RegisterForm/SingUp'
 import FormArt from './js/Components/UserPage/MarkDown/postArticle/newArticleBox'
+import VideoCall from './js/Components/VideoCall';
 
 const AppRoutes = ({match}) =>
   <App>
@@ -35,7 +36,7 @@ const AppRoutes = ({match}) =>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route path="/profile" component={profile}/>
       <Route exact path="/singin" component={SingIn}/>
-      
+      <Route path="/videoCall" component={VideoCall}/>
       <Route exact path="/singup" component={SingUp}/>
       <Route component={Error404}/>
     
