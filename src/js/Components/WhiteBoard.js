@@ -212,6 +212,9 @@ class WhiteBoard extends React.Component {
   _addText = () => this._sketch.addText(this.state.text);
 
   componentDidMount = () => {
+
+    this.setState({id:this.props.data})
+    console.log("id sesion udpate o se sudpoenstate:"+this.state.id)
     this.eventSource.addEventListener(
       "open",
       function(e) {
@@ -242,6 +245,9 @@ class WhiteBoard extends React.Component {
   };
 
   render = () => {
+  
+    console.log("id sesion:"+this.props.data )
+    console.log("id sesion state:"+this.state.id)
     let { controlledValue } = this.state;
     const theme = createMuiTheme({
       typography: {

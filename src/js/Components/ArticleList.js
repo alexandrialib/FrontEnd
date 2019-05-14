@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import '../../css/dashboard.css'
 import  Navbar  from './NavBar';
 import {URL} from '../DataProvider'
-
+import Card from '../Components/Cards'
 import {Link} from 'react-router-dom'
 import '../../css/titleBadges.scss'
 
@@ -29,7 +29,8 @@ export default class ArticlelList extends Component{
     }
     
     render(){ 
-      
+            const ur='/categories/'+this.state.name+'/articles/'
+            const tg=this.state.name
             return (
               <div className="App">
               <Navbar/>
@@ -37,17 +38,16 @@ export default class ArticlelList extends Component{
             
               <section class="section-container">
               <div className="contai">
-                {this.state.categories.map(key=>
-                <div class="note-container">
-                  <div class="sticky-note sticky-note-one" >{key.title}
-                  <button class="subtitle small-btn"><Link style={{color:"black"}}to={{pathname:'/categories/'+this.state.name+'/articles/'+key.title,
-                  state:{category:key.title,name:this.state.name}
-                      }}>View </Link></button>
-                </div>
-              </div>
-
+              {this.state.categories.map(key=>
+              <Card
+              title={key.title}
+              tags={[tg]}
+              refe={ur+key.title}
+              content="orem ipsum dolor sit amet, consectetur adipisi dolor sit amet, consectetur adipis dolor sit amet, consectetur adipis"
+              img="https://i.imgur.com/SbMGmW4.gif"
+            />
                 )}
-                </div>
+              </div>
                 </section>
               </div> 
             )

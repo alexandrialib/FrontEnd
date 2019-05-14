@@ -4,6 +4,9 @@ import React from "react";
 import { CompactPicker } from "react-color";
 // import 'flexboxgrid';
 import "../../css/main.css";
+import { Link as RouterLink } from 'react-router-dom'
+import Link from '@material-ui/core/Link';
+
 
 import AppBar from "@material-ui/core/AppBar";
 import Card from "@material-ui/core/Card";
@@ -103,7 +106,8 @@ class Session extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected:"editor"
+      selected:"editor",
+      id:""
     };
   }
 
@@ -113,6 +117,13 @@ class Session extends React.Component {
     }else{
 
     }
+  }
+  componentDidMount(){
+  
+    var rand =  1 + (Math.random() * (1000-1));
+    var random=Math.floor(rand);
+    this.setState({id:random}); 
+
   }
 
   render = () => {
@@ -125,34 +136,42 @@ class Session extends React.Component {
         secondary: { main: "#11cb5f" } // This is just green.A700 as hex.
       }
     });
+    const MyLink = props => <RouterLink to={"/session/"+this.state.id}/>
+
+
     return (
       <MuiThemeProvider theme={theme}>
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <AppBar title="Sketch Tool" position="static" style={styles.appBar}>
               <Toolbar>
+              <RouterLink to={"/session/"+this.state.id} style={{color:"white"}}>
               <Typography
                   variant="h6"
                   color="inherit"
+                  href={this.state.id}
                   style={{ marginRight: 18}}
                   onClick={() => {this.setState({selected:"editor"})}}
                 >
                   Editor
-                </Typography>
+                </Typography></RouterLink>
+                <RouterLink to={"/session/"+this.state.id} style={{color:"white"}}>
                 <Typography
                   variant="h6"
                   color="inherit"
+                  href={this.state.id}
                   style={{ flexGrow: 1 }}
                   onClick={() => {this.setState({selected:"paint"})}}
                 >
                   Paint
-                </Typography>
+                </Typography></RouterLink>
               </Toolbar>
             </AppBar>
           </div>
         </div>
         <div className="row">
-          {this.state.selected === "paint" ? <WhiteBoard/> : <Editor/>}
+          {this.state.selected === "paint" ? <WhiteBoard data={this.state.id} />
+           : <Editor data={this.state.id} />}
         </div>
       </MuiThemeProvider>
     );

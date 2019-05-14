@@ -109,6 +109,7 @@ class Editor extends Component {
   }
 
   componentDidMount() {
+    this.setState({id:this.props.data})
     this.eventSource.addEventListener(
       "open",
       function(e) {
@@ -178,6 +179,7 @@ class Editor extends Component {
   };
 
   render() {
+    console.log("id sesion editor:"+this.state.id)
     const theme = createMuiTheme({
       typography: {
         useNextVariants: true
