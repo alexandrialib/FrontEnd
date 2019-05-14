@@ -60,7 +60,7 @@ export async function getArticleFromCategory(category, title) {
 }
 
 export function postUser(user, success, fail) {
- 
+
   axios
     .post("/users", user)
     .then(success())
@@ -68,6 +68,7 @@ export function postUser(user, success, fail) {
 }
 
 export async function getUser(user, success, fail) {
+  
   return await axios({
     method: "get",
     url: "/user",

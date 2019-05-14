@@ -3,32 +3,24 @@ import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, M
 import '../../../css/RegisterForm/SingIn.css'
 import '../../../css/RegisterForm/SingUp.css'
 import { prototype } from "events";
-import {getUser} from "../../DataProvider"
-import { sha256, sha224 } from "js-sha256";
+import {postUser} from "../../DataProvider"
+import {Link} from 'react-router-dom'
 export default class SingUp extends Component {
     constructor(){
         super();
         this.state={
-          user:{
-            usern:"",
-            pass:""
-          },
-            username:"",
-            password:""
+          username:"",
+	email:"",
+	name:"",
+	lastName:"",
+	password:""
         }
-        this.login = this.login.bind(this)
     }
     handleTextChange(e) {
-      this.setState({content: e.target.value});
+      e.preventDefault();
+      postUser(this.state,console.log,console.log); 
     }
-    login(){
-      console.log("sera que esta monda si sirve")
-        var cred = {
-          "username":this.state.username,
-          "password":sha256(this.state.password)
-        }
-        getUser(this.state,console.log,console.log);
-      }
+ 
 
     render(){
   return (
@@ -44,12 +36,36 @@ export default class SingUp extends Component {
                 </h3>
               </div>
               <MDBInput
+                label="First Name"
+                icon="user"
+                group
+                type="email"
+                value={this.state.name}
+                onChange={(e) => this.setState({name:e.target.value})}
+                validate
+                error="wrong"
+                success="right"
+              />
+              <MDBInput
+                label="Last Name"
+                icon="user"
+                group
+                type="email"
+                value={this.state.lastName}
+                onChange={(e) => this.setState({lastName:e.target.value})}
+                required
+                validate
+                error="wrong"
+                success="right"
+              />
+              <MDBInput
                 label="Username"
                 icon="user"
                 group
                 type="email"
-                value={this.state.user.usern}
-                onChange={(e) => this.setState({username: e.target.value})}
+                value={this.state.username}
+                required
+                onChange={(e) => this.setState({username:e.target.value})}
                 validate
                 error="wrong"
                 success="right"
@@ -60,7 +76,10 @@ export default class SingUp extends Component {
                     icon="envelope"
                     group
                     type="email"
+                    value={this.state.email}
+                onChange={(e) => this.setState({email: e.target.value})}
                     validate
+                    required
                     error="wrong"
                     success="right"
                   />
@@ -68,8 +87,9 @@ export default class SingUp extends Component {
                 label="Password"
                 icon="lock"
                 group
-                value={this.state.user.pass}
+                value={this.state.password}
                 onChange={(e) => this.setState({password: e.target.value})}
+                required
                 type="password"
                 validate
                 containerClass="mb-0"
@@ -99,10 +119,13 @@ export default class SingUp extends Component {
                   color="red darken-3"
                   rounded
                   href="/profile"
-                  onClick={this.login}
+                  onClick={(e) => this.handleTextChange(e)} 
                   className="btn-block z-depth-1a"
                 >
-                  Sign up
+               <Link style={{color:"white"}}to={{pathname:'/profile',
+                state:{user:this.state.username,pass:this.state.password}
+            }}>Sign up </Link>
+                 
                 </MDBBtn>
               </div>
               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">

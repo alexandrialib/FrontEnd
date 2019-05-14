@@ -49,20 +49,11 @@ class Article extends Component {
             <h1>{this.state.article.title}</h1>
             <p class="author">{this.state.author.username}<br />Published on: 17th March, 2014.</p>
             <h2 className="formatArt">{this.state.article.title}</h2>
-
-            <p>{this.state.article.content}</p>
-            <p class="pullquote">These new devices are radically transforming what is possible in digital visual design and this has radical implications for digital typography. </p>
-
             <Markdown 
             source= {this.state.article.content}
             />
             <h2 className="formatArt">COMMENTS</h2>
-            
-            
               <CommentBox url={this.state.urlComments} pollInterval={2000} />
-            
-            
-             
           </section>
           
           <div class="containe isActive">

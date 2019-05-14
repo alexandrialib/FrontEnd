@@ -1,10 +1,76 @@
 import React from 'react';
 import '../css/Error.css';
-
+import '../css/404.scss'
 export default class Error404 extends React.Component {
   render() {
     return (
-      <section class="page_404">
+      <div class="fOf">
+<div class="text">
+  <p>404</p>
+</div>
+<div class="container-error">
+
+  <div class="caveman">
+    <div class="leg">
+      <div class="foot">
+        <div class="fingers"></div>
+      </div>
+    </div>
+    <div class="leg">
+      <div class="foot">
+        <div class="fingers"></div>
+      </div>
+    </div>
+    <div class="shape">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="head">
+      <div class="eye">
+        <div class="nose"></div>
+      </div>
+      <div class="mouth"></div>
+    </div>
+    <div class="arm-right">
+      <div class="club"></div>
+    </div>
+  </div>
+
+  <div class="caveman">
+    <div class="leg">
+      <div class="foot">
+        <div class="fingers"></div>
+      </div>
+    </div>
+    <div class="leg">
+      <div class="foot">
+        <div class="fingers"></div>
+      </div>
+    </div>
+    <div class="shape">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="head">
+      <div class="eye">
+        <div class="nose"></div>
+      </div>
+      <div class="mouth"></div>
+    </div>
+    <div class="arm-right">
+      <div class="club"></div>
+    </div>
+  </div>
+  
+        
+
+</div>
+</div>
+    )
+  }
+}
+/**
+ * <section class="page_404">
   
         <div class="row">	
         <div class="col-sm-12 ">
@@ -29,6 +95,4 @@ export default class Error404 extends React.Component {
         </div>
       
     </section>
-    )
-  }
-}
+ */

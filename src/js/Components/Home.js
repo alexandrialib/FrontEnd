@@ -52,22 +52,26 @@ export default class Home extends React.Component {
               title="Quick"
               tags={["Sort"]}
               refe="/categories/Sort/articles/Quick"
+              content="orem ipsum dolor sit amet, consectetur adipisi dolor sit amet, consectetur adipis dolor sit amet, consectetur adipis"
               img="https://i.imgur.com/SbMGmW4.gif"
             />
             <Card
               title="MST"
               tags={["Graph theory"]}
+              content="orem ipsum dolor sit amet, consectetur adipisi"
               refe="/categories/Graph%20theory/articles/MST"
               img="https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/11/MorphingShapes_615x400.gif"
             />
             <Card
               title="Merge"
+              content="orem ipsum dolor sit amet, consectetur adipisi"
               tags={["Sort"]}
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
             />
             <Card
               title="TopoSort"
               tags={["Graph Theory"]}
+              content="orem ipsum dolor sit amet, consectetur adipisi"
               refe="/categories/Graph%20theory/articles/TopoSort"
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
             />
@@ -75,6 +79,7 @@ export default class Home extends React.Component {
               <Card
               title={key.title}
               tags={["Sort"]}
+              content="orem ipsum dolor sit amet, consectetur adipisi"
               refe={"/categories/Sort/articles/"+key.name}
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
               />

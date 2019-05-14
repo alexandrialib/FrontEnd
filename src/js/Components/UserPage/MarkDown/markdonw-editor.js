@@ -4,7 +4,7 @@ import ArticleForm from './postArticle/newArticleForm'
 import NavBari from './../../NavBar'
 import Editor from './Editor'
 import Preview from './preview'
-import {postArticle} from '../../../DataProvider'
+import {postArticle, getUserbyUsername} from '../../../DataProvider'
 import NewArticleBox from '../MarkDown/postArticle/newArticleBox'
 
 
@@ -14,6 +14,7 @@ export default class Appi extends Component {
 		super(props);
 
 		this.state = {
+			user:{},
 			markdown: [
 				"# Lorem ipsum !\n\n",
 				"![Meet the new boss](https://www.newscredit.org/wp-content/uploads/2019/02/Software-Development-2.jpg)\n\n",
@@ -85,12 +86,17 @@ export default class Appi extends Component {
 			status: "Markdown cleared"
 		});
 	}
+	async componentDidMount(){
+		const post =await getUserbyUsername(this.props.location.state.user,this.props.location.state.pass);
+		this.setState({user:post})
+		}
 	async addArticle(category){
+		
 		console.log(category.category+"perro jiji")
 		console.log(this.state.markdown)
 		
         console.log("esto no sirve"+ category.content)
-        postArticle(category.category,{"title":category.title,"content":this.state.markdown});
+        postArticle(category.category,{"title":category.title,"content":this.state.markdown,"author":this.state.user});
         
        
     }
