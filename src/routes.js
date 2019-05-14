@@ -1,27 +1,28 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import About from './js/Components/About'
-import Comments from './js/Model/CommentList'
+import About from './js/Components/About';
+import Comments from './js/Model/CommentList';
 import App from './js/App';
 import Article from './js/Components/Article';
-import Categories from './js/Components/Categories'
+import Categories from './js/Components/Categories';
 import Home from './js/Components/Home';
 import ArticleList from './js/Components/ArticleList';
 import Error404 from './js/404';
-import Editor from './js/Components/Editor'
-import Blackboard from './js/Components/Blackboard'
-import WhiteBoard from './js/Components/WhiteBoard'
+import Editor from './js/Components/Editor';
+import Blackboard from './js/Components/Blackboard';
+import WhiteBoard from './js/Components/WhiteBoard';
 import Session from './js/Components/Session';
-import profile from './js/Components/UserPage/profile'
-import SingIn from './js/Components/RegisterForm/SingIn'
-import reactMArk from './js/Components/UserPage/MarkDown/markdonw-editor'
-import SingUp from './js/Components/RegisterForm/SingUp'
-import FormArt from './js/Components/UserPage/MarkDown/postArticle/newArticleBox'
-import VideoCall from './js/Components/VideoCall';
+import profile from './js/Components/UserPage/profile';
+import SingIn from './js/Components/RegisterForm/SingIn';
+import reactMArk from './js/Components/UserPage/MarkDown/markdonw-editor';
+import SingUp from './js/Components/RegisterForm/SingUp';
+import FormArt from './js/Components/UserPage/MarkDown/postArticle/newArticleBox';
+import VideoChat from './js/VideoCall/public/js/VideoChat';
 
 const AppRoutes = ({match}) =>
   <App>
     <Switch>
+    <Route exact path="/VideoChat" component={VideoChat}/>
       <Route exact path="/newArtF" component={FormArt}/>
       <Route exact path="/About" component={About}/>
       <Route exact path="/" component={Home}/>  
@@ -36,7 +37,6 @@ const AppRoutes = ({match}) =>
       <Route path="/categories/:title" component={ArticleList}/>
       <Route path="/profile" component={profile}/>
       <Route exact path="/singin" component={SingIn}/>
-      <Route path="/videoCall" component={VideoCall}/>
       <Route exact path="/singup" component={SingUp}/>
       <Route component={Error404}/>
     
