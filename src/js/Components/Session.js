@@ -1,13 +1,8 @@
 /*eslint no-unused-vars: 0, no-console: 0*/
 
 import React from "react";
-import { CompactPicker } from "react-color";
-// import 'flexboxgrid';
 import "../../css/main.css";
 import { Link as RouterLink } from 'react-router-dom'
-import Link from '@material-ui/core/Link';
-
-
 import AppBar from "@material-ui/core/AppBar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
