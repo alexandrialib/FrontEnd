@@ -24,12 +24,17 @@
     }
 
     .cambios {
-        display: block;
-        background: transparent;
-        /* display: flex; */
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 90%;
-        max-width: 960px;
-        margin: 0 auto;
+      position: absolute;
+      top: 0;
+  
+      right: 0;
+      bottom: 0;
+      display: block;
+      background: transparent;
+      /* display: flex; */
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
     }

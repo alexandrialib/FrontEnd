@@ -56,23 +56,7 @@ class Article extends Component {
               <CommentBox url={this.state.urlComments} pollInterval={2000} />
           </section>
           
-          <div class="containe isActive">
-    <div class="book">
-        <div class="book-paper">
-            <div class="book-paper-shadow"></div>
-        </div>
-    </div>
-    <div class="book">
-        <div class="book-paper">
-            <div class="book-paper-shadow"></div>
-        </div>
-    </div>
-    <div class="book">
-        <div class="book-paper">
-            <div class="book-paper-shadow"></div>
-        </div>
-    </div>
-</div>
+         
         </section>
       </div>
 

@@ -8,6 +8,7 @@ import Modal from 'react-bootstrap/Modal'
 import '../../../css/UserPage/profile.scss'
 
 import {Link} from 'react-router-dom'
+import CategoryBox from './TeacherComponents/CategoryBox';
 
 
 export default class profile extends Component{
@@ -86,14 +87,10 @@ export default class profile extends Component{
               )} </div>
               <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Add new category</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-         
-            <p><button class="btn-left" onClick={this.handleClose}><a>post</a></button></p>
-           
-          </Modal.Footer>
+          <Modal.Body><CategoryBox /></Modal.Body>
+          
         </Modal>
 </section>
 </div>

@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
 import '../../css/Article.css';
 import '../../css/components/sticky.scss';
-import {URL} from '../DataProvider'
-
 import  Navbar  from './NavBar';
 import Category from './Category';
 import {getAllCategories} from '../DataProvider';
@@ -18,7 +16,6 @@ export default class Categories extends Component{
 
     async componentDidMount(){
       const posts=await getAllCategories("categories");
-      console.log(posts.name);
           const categories = posts;
           this.setState({ categories });
 
@@ -30,14 +27,12 @@ export default class Categories extends Component{
               <div className="App">
                   <Navbar/>
      
-                  <section class="section-container">
+                  <section className="section-container">
               
                 <div className="contai">
                     {this.state.categories.map(key=>
                       <Category 
                       title={key.name}
-                    ingredients={key.articles.map(a=>
-                      a.title)}
                   />
                     )}</div>
                

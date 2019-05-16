@@ -3,6 +3,7 @@ $COLOR_BOOK_COVER1: #FF5420;
 $COLOR_BOOK_COVER2: #4D4D4D;
 $COLOR_BOOK_COVER3: #2BA7FF;
 $COLOR_BOOK_PAPER: #f1f1f1;
+$break-medium: 700px;
 
 .formatArt {
     writing-mode: vertical-rl;
@@ -15,11 +16,16 @@ $COLOR_BOOK_PAPER: #f1f1f1;
   
   .left-step {
     width: 80%;
-    max-width: 132ch;
+    
     margin: 0 auto;
     font-family: 'Cormorant Infant', serif;
     border-left: 8px solid black;
     padding: 3rem 1rem 1rem 3.8rem;
+    @media (max-width:$break-medium){
+      max-width: 50ch;
+      padding: 1rem 0.5rem 0.5rem 1.8rem;
+   
+    }
   }
   .left-step h1 {
     margin: 0 0 1rem -3rem;
@@ -190,8 +196,8 @@ $COLOR_BOOK_PAPER: #f1f1f1;
 
 .containe {
     position: absolute;
-    top: 35%;
-    right: 2%;
+    top: 45%;
+    right: 5%;
     transform: translate(-50%, -50%);
     cursor: pointer;
     &:after {
@@ -205,6 +211,12 @@ $COLOR_BOOK_PAPER: #f1f1f1;
         background-color: rgba(black, 0.25);
         z-index: -1;
         transition: background-color 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    @media (max-width:$break-medium){
+     position: absolute;
+     top: 24%;
+     right: 2%;
+     transform: translate(-25%, -25%);
     }
 }
 
@@ -231,6 +243,20 @@ $COLOR_BOOK_PAPER: #f1f1f1;
         bottom: 0;
         background-color: darken($COLOR_BOOK_COVER1, 5%);
     }
+    @media (max-width:$break-medium){
+      position: relative;
+      width: 55px;
+      height: 18px;
+      margin-left: 10px;
+      background-color: #FF5420;
+      border-radius: 8px;
+      box-shadow: inset 0 -5px #ff4007;
+      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  
+     }
 }
 
 .book-paper {
@@ -241,6 +267,7 @@ $COLOR_BOOK_PAPER: #f1f1f1;
     background-color: $COLOR_BOOK_PAPER;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    
     &:before,
     &:after {
         content: '';
@@ -258,6 +285,7 @@ $COLOR_BOOK_PAPER: #f1f1f1;
         bottom: 0;
         border-top-right-radius: 0;
     }
+    
 }
 
 .book-paper-shadow {
@@ -277,6 +305,14 @@ $COLOR_BOOK_PAPER: #f1f1f1;
         border-radius: 3px;
         background-color: $COLOR_BOOK_PAPER;
     }
+    @media (max-width:$break-medium){
+      position: absolute;
+      top: auto;
+      right: 0;
+      width: auto;
+      height: auto;
+      background-color: #dddddd;
+     }
 }
 
 .book:nth-child(1) {

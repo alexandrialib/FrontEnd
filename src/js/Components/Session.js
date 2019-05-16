@@ -19,9 +19,14 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Collapse from "@material-ui/core/Collapse";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import color from "@material-ui/core/colors/blueGrey";
-
+import Modal from 'react-bootstrap/Modal'
 import UndoIcon from "@material-ui/icons/Undo";
 import RedoIcon from "@material-ui/icons/Redo";
+import Share from "@material-ui/icons/Share"
+import MenuIcon from '@material-ui/icons/Menu';
+import AddIco from '@material-ui/icons/Add';
+import MoreIcon from '@material-ui/icons/MoreVert';
+import SearchIcon from '@material-ui/icons/Search';
 import DeleteIcon from "@material-ui/icons/Delete";
 import SaveIcon from "@material-ui/icons/Save";
 import ClearIcon from "@material-ui/icons/Clear";
@@ -101,9 +106,20 @@ class Session extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      show:false,
       selected:"editor",
       id:"5c992f0922a4ae1086a46fd5"
     };
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.copy = this.copy.bind(this);
+  }
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
   }
 
   _select = (value) => {
@@ -119,6 +135,12 @@ class Session extends React.Component {
     var random=Math.floor(rand);
     this.setState({id:"5c992f0922a4ae1086a46fd5"}); 
 
+  }
+  
+  copy() {
+   
+    this.elRef.select();
+    document.execCommand("copy");
   }
 
   render = () => {
@@ -140,12 +162,22 @@ class Session extends React.Component {
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <AppBar title="Sketch Tool" position="static" style={styles.appBar}>
               <Toolbar>
+              <RouterLink to={"/"} style={{color:"white"}}>
+              <Typography
+              variant="h6"
+              color="inherit"
+              style={{ marginRight:20}}
+              >
+                Home 
+              </Typography>
+              </RouterLink>
               <RouterLink to={"/session/"+this.state.id} style={{color:"white"}}>
+              
               <Typography
                   variant="h6"
                   color="inherit"
-                  href={this.state.id}
-                  style={{ marginRight: 18}}
+                 
+                  style={{ marginRight:20}}
                   onClick={() => {this.setState({selected:"editor"})}}
                 >
                   Editor
@@ -154,12 +186,36 @@ class Session extends React.Component {
                 <Typography
                   variant="h6"
                   color="inherit"
-                  href={this.state.id}
-                  style={{ flexGrow: 1 }}
+               
+                  style={{ marginRight:20}}
                   onClick={() => {this.setState({selected:"paint"})}}
                 >
                   Paint
                 </Typography></RouterLink>
+                <IconButton color="inherit" onClick={this.handleShow}>
+              <Share 
+              style={{ color:"white",float:"left"}}
+               color="inherit"/>
+            </IconButton>
+                <div>
+         
+        
+            <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Share session </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <input className="share-input" id="url-input" ref={el => this.elRef = el} value={window.location.href} />
+          </Modal.Body>
+          <Modal.Footer>
+            
+          <p><button class="btn-right" style={{ color:"beige"}} onClick={this.copy}><a>Copy</a></button></p>
+            <p><button class="btn-right" style={{ color:"beige"}} onClick={this.handleClose}><a>Cancel</a></button></p>
+           
+          </Modal.Footer>
+        </Modal>
+          </div>
+                
               </Toolbar>
             </AppBar>
           </div>

@@ -230,8 +230,8 @@ form {
 }
 input {
   border-radius: 15px;
-  background: #95b849;
- width: 70px;
+
+  width: -webkit-fill-available;
   position: relative;
   color: black;
  

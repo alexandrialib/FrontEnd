@@ -178,7 +178,7 @@ class Editor extends Component {
   };
 
   render() {
-    console.log("id sesion editor:"+this.state.id)
+ 
     const theme = createMuiTheme({
       typography: {
         useNextVariants: true

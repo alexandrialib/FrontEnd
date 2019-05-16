@@ -29,7 +29,7 @@ export default class CategoryForm extends Component{
     
        render(){
         return (
-            <form className="note" onSubmit={(e) => this.handleSubmit(e)}> 
+            <form  onSubmit={(e) => this.handleSubmit(e)}> 
            
                 <input
                     className="inputCat"
@@ -38,7 +38,8 @@ export default class CategoryForm extends Component{
                     value={this.state.content}
                     onChange={(e) => this.handleTextChange(e)} 
                 /> 
-                <input type="submit" className="inputCat" value="Post" />
+              
+                <p><button type="submit" class="btn-right" ><a>Post</a></button></p>
             </form>
         );	
        }

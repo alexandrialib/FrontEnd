@@ -39,7 +39,8 @@ export default class CommentForm extends React.Component {
 				 value={this.state.content}
 				 onChange={(e) => this.handleTextChange(e)} 
 			 /> 
-			 <input type="submit" className="boton" value="Post" />
+			<p><button type="submit" class="btn-right" ><a>Post</a></button></p>
+			 
 		 </form>
 	 );	
 	}

@@ -205,7 +205,7 @@ class WhiteBoard extends React.Component {
       this._equals(this._sketch.toJSON().objects,
       this.state.lastState.objects)
     ) {
-      console.log("igual, no cambio");
+    
     } else {
       var instance = this._sketch.toJSON()
       instance.user = this.state.user
