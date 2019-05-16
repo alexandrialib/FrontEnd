@@ -102,7 +102,7 @@ class Session extends React.Component {
     super(props);
     this.state = {
       selected:"editor",
-      id:""
+      id:"5c992f0922a4ae1086a46fd5"
     };
   }
 
@@ -117,7 +117,7 @@ class Session extends React.Component {
   
     var rand =  1 + (Math.random() * (1000-1));
     var random=Math.floor(rand);
-    this.setState({id:random}); 
+    this.setState({id:"5c992f0922a4ae1086a46fd5"}); 
 
   }
 
@@ -165,8 +165,8 @@ class Session extends React.Component {
           </div>
         </div>
         <div className="row">
-          {this.state.selected === "paint" ? <WhiteBoard data={this.state.id} />
-           : <Editor data={this.state.id} />}
+          {this.state.selected === "paint" ? <WhiteBoard id={this.state.id} />
+           : <Editor id={this.state.id} />}
         </div>
       </MuiThemeProvider>
     );

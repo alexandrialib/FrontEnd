@@ -92,9 +92,11 @@ class WhiteBoard extends React.Component {
       lastState: {
         version: "2.4.3",
         objects: [],
-        background: "transparent"
+        background: "transparent",
+        user:""
       },
-      id: "5c992f0922a4ae1086a46fd5",
+      id: this.props.id,
+      user: "User" + Math.floor(Math.random() * 10000),
       lineWidth: 10,
       lineColor: "black",
       fillColor: "#68CCCA",
@@ -129,8 +131,11 @@ class WhiteBoard extends React.Component {
   }
 
   update(param) {
-    if (param !== null || this._sketch !== null) {
-      console.log(param);
+    if (param !== null && this._sketch !== null && 
+      param.user!== this.state.user && 
+      !this._equals(this.state.lastState.objects,param.objects)
+      ) {
+      this.setState({ lastState: param });
       this._sketch.fromJSON(param);
     }
     // if (param.lastUser !== this.state.user) {
@@ -192,33 +197,31 @@ class WhiteBoard extends React.Component {
     this._sketch.removeSelected();
   };
 
+  _equals =(a,b) =>{
+    return JSON.stringify(a) === JSON.stringify(b)
+  }
   _onSketchChange = () => {
     if (
-      JSON.stringify(this._sketch.toJSON()) ==
-      JSON.stringify(this.state.lastState)
+      this._equals(this._sketch.toJSON().objects,
+      this.state.lastState.objects)
     ) {
       console.log("igual, no cambio");
     } else {
-      this.setState({ lastState: this._sketch.toJSON() });
-      axios.put(url + this.state.id, this._sketch.toJSON());
-      let prev = this.state.canUndo;
-      let now = this._sketch.canUndo();
-      if (prev !== now) {
-        this.setState({ canUndo: now });
-      }
+      var instance = this._sketch.toJSON()
+      instance.user = this.state.user
+      this.setState({ lastState: instance });
+      axios.put(url + this.state.id, instance);
+      console.log("send",instance);
     }
   };
 
   _addText = () => this._sketch.addText(this.state.text);
 
   componentDidMount = () => {
-
-    this.setState({id:this.props.data})
-    console.log("id sesion udpate o se sudpoenstate:"+this.state.id)
     this.eventSource.addEventListener(
       "open",
       function(e) {
-        console.log("onopen", e);
+        // console.log("onopen", e);
       },
       false
     );
@@ -234,7 +237,7 @@ class WhiteBoard extends React.Component {
     this.eventSource.addEventListener(
       "message",
       function(e) {
-        console.log("onmessage", e);
+        // console.log("onmessage", e);
       },
       false
     );
@@ -245,9 +248,6 @@ class WhiteBoard extends React.Component {
   };
 
   render = () => {
-  
-    console.log("id sesion:"+this.props.data )
-    console.log("id sesion state:"+this.state.id)
     let { controlledValue } = this.state;
     const theme = createMuiTheme({
       typography: {

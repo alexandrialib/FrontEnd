@@ -1,7 +1,7 @@
 import axios from "axios";
 import { func } from "prop-types";
 export var URL = "https://alexandria-lib-back.herokuapp.com";
-// URL = "http://localhost:8080";
+URL = "http://localhost:8080";
 axios.defaults.baseURL = URL;
 
 

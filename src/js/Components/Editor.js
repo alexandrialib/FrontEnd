@@ -95,7 +95,7 @@ class Editor extends Component {
     super(props);
     this.state = {
       aceEditorValue: "",
-      id: "5c992f0922a4ae1086a46fd5",
+      id: this.props.id,
       user: "User" + Math.floor(Math.random() * 10000),
       expandTools: true,
       fontSize: 14,
@@ -109,7 +109,6 @@ class Editor extends Component {
   }
 
   componentDidMount() {
-    this.setState({id:this.props.data})
     this.eventSource.addEventListener(
       "open",
       function(e) {
