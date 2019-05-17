@@ -61,7 +61,7 @@ render() {
             <MDBNavLink to="/About">About</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem  >
-          <a  style={{color:"white",position:"absolute",top:"24px"}} onClick={this.toggle(2)}>Prueba </a>
+          <a  style={{color:"white",position:"absolute",top:"24px"}} onClick={this.toggle(2)}>Code Editor </a>
           
           </MDBNavItem>
 
