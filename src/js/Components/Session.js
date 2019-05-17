@@ -105,10 +105,12 @@ const styles = {
 class Session extends React.Component {
   constructor(props) {
     super(props);
+    const articleUrl= window.location.pathname;
+    var urlsplit = articleUrl.split("/");
     this.state = {
       show:false,
       selected:"editor",
-      id:"5c992f0922a4ae1086a46fd5"
+      id:urlsplit[2]
     };
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -129,12 +131,9 @@ class Session extends React.Component {
 
     }
   }
-  componentDidMount(){
-  
+  componentDidMount(){  
     var rand =  1 + (Math.random() * (1000-1));
     var random=Math.floor(rand);
-    this.setState({id:"5c992f0922a4ae1086a46fd5"}); 
-
   }
   
   copy() {
