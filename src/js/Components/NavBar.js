@@ -24,12 +24,17 @@ class NavbarPage extends Component {
     });
   }
   
-
+handleTextChange(e) {
+		 this.setState({id: e.target.value});
+	 }
 toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
 }
-handleClose =() => {
-  this.setState({ show: false });
+handleClose () {
+  console.log("kiki")
+  var rand =  1 + (Math.random() * (1000-1));
+  var random=Math.floor(rand);
+ 
 }
 
 handleShow =()=>  {
@@ -94,15 +99,16 @@ render() {
         <MDBModal isOpen={this.state.modal2} toggle={this.toggle(2)}>
         <MDBModalHeader toggle={this.toggle(2)}>Session</MDBModalHeader>
         <MDBModalBody>
-        <input className="share-input" id="connectS-input"  value="connec to session" />
+        <input className="share-input" id="connectS-input"  
+        type="text"
+        placeholder="Connect a session"
+        onChange={(e) => this.handleTextChange(e)} />
         </MDBModalBody>
         <MDBModalFooter>
-          <MDBBtn color="secondary" onClick={this.toggle(2)}>Close</MDBBtn>
-          <button className="btn-right"><Link style={{color:"black"}}to={{pathname:'/session/'+this.state.id,
-                state:{session:this.state.id}
-            }}>Connect </Link></button>
-          <p><button class="btn-right" style={{ color:"beige"}} onClick={this.handleClose}><a>connect</a></button></p>
-          <p><button class="btn-right" style={{ color:"beige"}} onClick={this.handleClose}><a>Start </a></button></p>
+          <p><button className="btn-right"><Link style={{color:"black"}}to={{pathname:'/session/'+this.state.id
+            }}><a>Connect</a></Link></button></p>
+             <p><button className="btn-right" onClick={this.handleClose} ><Link style={{color:"black"}}to={{pathname:'/session/'+this.state.id
+            }}><a>New</a> </Link></button></p>
         </MDBModalFooter>
       </MDBModal>
       </MDBCollapse>
