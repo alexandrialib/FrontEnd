@@ -17,6 +17,17 @@
 .badge-pro {
     background: #fcd000;
 }
+.profile-div{
+  background-attachment: fixed;
+  @media (max-width: 800px) { 
+    .container-profile {
+       display: flex;
+    flex-direction: column;
+    } .content-profile {order: 2;
+      margin-top: 34rem;
+    } }
+}
+
 
 .container-profile{
    position:fixed;
@@ -27,6 +38,9 @@
    top:100px;
    left:20px;
    box-shadow: 0 14px 28px rgba(241, 217, 172, 0.22), 0 10px 10px rgba(241, 217, 172, 0.22);
+   @media (max-width:320px){
+    width: 244px;
+}
 }
 .profile-picture{
    background:url('http://farm4.staticflickr.com/3412/3446830982_c8b55cc7e8_q.jpg');
@@ -254,6 +268,13 @@
     left: 40px;
     margin: 10PX;
     padding: 10px;
+    @media (max-width:800px){
+        bottom:50px;
+    }
+    @media (max-width:320px){
+      bottom:40px;
+      left: 12px;
+  }
 
 
 }

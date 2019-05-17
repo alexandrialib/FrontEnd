@@ -3,11 +3,23 @@
 
   #messages {
     position: relative;
-    margin: 50px auto;
-    padding: 0;
+    margin: 1.5rem;
+    padding: 1rem;
     width: 800px;
-    list-style: none; }
+    list-style: none;
+    @media (max-widht:900px){
+      position: relative;
+      margin: 0rem;
+      padding: 1rem;
+      width: 800px;
+      list-style: none;
+    }
+   
+    
   
+  }
+ 
+ 
   #messages li {
     float: left;
     margin-bottom: 30px;
@@ -75,7 +87,10 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-    width: 60%; }
+    width: 60%;
+   
+  }
+ 
   
   
   .sprite {

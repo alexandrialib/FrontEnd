@@ -49,7 +49,7 @@ export default class profile extends Component{
         return(
             <div className="App">
                 <Navbar/>
-<section>     
+<section className="profile-div">     
 <div className="container-profile">
    <div class="profile-picture"></div>
  

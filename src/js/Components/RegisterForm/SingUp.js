@@ -17,7 +17,7 @@ export default class SingUp extends Component {
         }
     }
     handleTextChange(e) {
-      e.preventDefault();
+      
       postUser(this.state,console.log,console.log); 
     }
  
@@ -128,34 +128,12 @@ export default class SingUp extends Component {
                  
                 </MDBBtn>
               </div>
-              <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
-
-                or Sign up with:
-              </p>
-              <div className="row my-3 d-flex justify-content-center">
-                
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="mr-md-3 z-depth-1a"
-                >
-                  <MDBIcon fab icon="github" className="red-text" />
-                </MDBBtn>
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="z-depth-1a"
-                >
-                  <MDBIcon fab icon="google-plus-g" className="red-text" />
-                </MDBBtn>
-              </div>
+             
             </MDBCardBody>
             <MDBModalFooter className="mx-5 pt-3 mb-1">
               <p className="font-small grey-text d-flex justify-content-end">
                 Have an account?
-                <a href="/signin" className="red-text ml-1">
+                <a href="/singin" className="red-text ml-1">
                   Sign In
                 </a>
               </p>

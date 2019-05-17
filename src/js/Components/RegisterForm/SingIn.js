@@ -31,9 +31,10 @@ export default class SingIn extends Component {
         getUser(this.state,console.log,console.log);
       }
       onSubmit = async () => {
+        if(this.state.username=="" || this.state.password==""){
+         
+        }
         const response = await getUser(this.state,console.log,console.log)
-        console.log("kakak"+response)
-     
         
       }
 
@@ -67,6 +68,7 @@ export default class SingIn extends Component {
                 icon="lock"
                 name="password"
                 group
+                required="required" 
                 onChange={e => this.onChange(e)}
                 value={this.state.password}
                 type="password"
@@ -83,6 +85,7 @@ export default class SingIn extends Component {
               <div className="text-center mb-3">
                 <MDBBtn
                   type="button"
+                  
                   color="red darken-3"
                   rounded
                   href="/singin"
@@ -96,29 +99,7 @@ export default class SingIn extends Component {
                   
                 </MDBBtn>
               </div>
-              <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
-
-                or Sign in with:
-              </p>
-              <div className="row my-3 d-flex justify-content-center">
-                
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="mr-md-3 z-depth-1a"
-                >
-                  <MDBIcon fab icon="github" className="red-text" />
-                </MDBBtn>
-                <MDBBtn
-                  type="button"
-                  color="white"
-                  rounded
-                  className="z-depth-1a"
-                >
-                  <MDBIcon fab icon="google-plus-g" className="red-text" />
-                </MDBBtn>
-              </div>
+        
             </MDBCardBody>
             <MDBModalFooter className="mx-5 pt-3 mb-1">
               <p className="font-small grey-text d-flex justify-content-end">
