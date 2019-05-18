@@ -117,7 +117,6 @@ export default class SingUp extends Component {
                   type="button"
                   color="red darken-3"
                   rounded
-                  href="/profile"
                   onClick={(e) => this.handleTextChange(e)} 
                   className="btn-block z-depth-1a"
                 >

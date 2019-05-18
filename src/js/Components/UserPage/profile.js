@@ -35,12 +35,12 @@ export default class profile extends Component{
         const artCat=postPopular.articles
         this.setState({clave:pass})
         this.setState({articulosSuscritos:artCat})      
-            const post =await getUserbyUsername(this.props.location.state.user,this.props.location.state.pass);          
+            const post =await getUserbyUsername(this.props.location.state.user,this.props.location.state.pass).catch(console.log());          
             this.setState({user:post})
   
     }
     render(){
-        
+       // if(this.state.user.){window.location="http://localhost:3000/singin"}
         return(
             <div className="App">
                 <Navbar/>
@@ -61,9 +61,9 @@ export default class profile extends Component{
   
    </div>
    <div className="buttonArticle">
-                <p><button className="btn-right"><a><Link style={{color:"white"}}to={{pathname:'/newArticle',
-                state:{user:this.state.username,pass:this.state.password}
-            }}>+ ARTICLE </Link></a></button></p>
+                <p><button className="btn-right"><Link style={{color:"white"}}to={{pathname:'/newArticle',
+                state:{user:this.state.user.username,pass:this.state.clave}
+            }}>+ ARTICLE </Link></button></p>
                 <p><button className="btn-left" onClick={this.handleShow}><a>+ CATEGORY</a></button></p>
                 
                 </div>

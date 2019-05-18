@@ -9,11 +9,6 @@ export default class CommentForm extends Component {
 	 }
 
 	}
-	
-	
-	
-
-	 
 	 handleTextChange(e) {
 		 this.setState({content: e.target.value});
 	 }
@@ -40,7 +35,7 @@ export default class CommentForm extends Component {
 				 value={this.state.content}
 				 onChange={(e) => this.handleTextChange(e)} 
 			 /> 
-			<p><button type="submit" className="btn-right" ><a>Post</a></button></p>
+			<p><button type="submit" className="btn-right" ><a >Post</a></button></p>
 			 
 		 </form>
 	 );	

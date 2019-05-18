@@ -33,6 +33,8 @@ handleClose () {
   
   var rand =  1 + (Math.random() * (1000-1));
   var random=Math.floor(rand);
+
+  
  
 }
 
@@ -42,6 +44,8 @@ handleShow =()=>  {
 }
 
 render() {
+  var rand =  1 + (Math.random() * (1000-1));
+  var random=Math.floor(rand);
   return (
     <MDBNavbar color="brown darken-3" dark expand="md" >
       <MDBNavbarBrand>
@@ -67,20 +71,7 @@ render() {
         </MDBNavbarNav>
         <MDBNavbarNav right>
         <MDBNavItem>
-        <Router>
-          <MDBCollapse isOpen={this.state.collapsed} navbar>
-            <MDBNavbarNav right onClick={this.handleNavbarClick}>
-              <MDBFormInline className="md-form mr-auto m-0">
-                <input className="form-control mr-sm-2" type="text" placeholder="Search"
-                
-                aria-label="Search"  />
-                <MDBBtn outline color="white" size="sm" type="submit" className="mr-auto">
-                  Search
-                </MDBBtn>
-              </MDBFormInline>
-            </MDBNavbarNav>
-          </MDBCollapse>
-        </Router>
+     
         </MDBNavItem>
           <MDBNavItem>
             <MDBDropdown>
@@ -105,9 +96,9 @@ render() {
         </MDBModalBody>
         <MDBModalFooter>
           <p><button className="btn-right"><Link style={{color:"black"}}to={{pathname:'/session/'+this.state.id
-            }}><a>Connect</a></Link></button></p>
-             <p><button className="btn-right" onClick={this.handleClose} ><Link style={{color:"black"}}to={{pathname:'/session/'+this.state.id
-            }}><a>New</a> </Link></button></p>
+            }}>Connect</Link></button></p>
+             <p><button className="btn-right" onClick={this.handleClose} ><Link style={{color:"black"}}to={{pathname:'/session/'+random
+            }}>New</Link></button></p>
         </MDBModalFooter>
       </MDBModal>
       </MDBCollapse>

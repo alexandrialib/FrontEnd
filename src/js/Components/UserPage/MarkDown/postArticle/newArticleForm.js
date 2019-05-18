@@ -1,24 +1,16 @@
 import React,{Component} from 'react'
-
-import {postArticle} from '../../../../DataProvider'
 import '../../../../../css/UserPage/formNewArticle.scss'
 export default class newArticleForm extends Component{
     constructor(props) {
         super(props);
-        this.init();
-       }
-       init(){
-           this.state = {
-               title :"",
-               categoryList:[],
-               category:""
-
-            };
-       }
-      
-       
+        this.state={
+            title :"",
+            categoryList:[],
+            category:""
+        }
    
-        
+       }
+  
         handleTextChange(e) {
             this.setState({title: e.target.value});
         }

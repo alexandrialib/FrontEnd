@@ -3,15 +3,11 @@ import '../../../../css/UserPage/categoryPost.scss'
 export default class CategoryForm extends Component{
     constructor(props) {
         super(props);
-        this.init();
+        this.state={
+            content:'',showSomething:false
+        }
+      
        }
-       
-       init(){
-           this.state = {content : ''};
-       }
-       
-   
-        
         handleTextChange(e) {
             this.setState({content: e.target.value});
         }
@@ -39,7 +35,7 @@ export default class CategoryForm extends Component{
                     onChange={(e) => this.handleTextChange(e)} 
                 /> 
               
-                <p><button type="submit" class="btn-right" ><a>Post</a></button></p>
+                <p><button type="submit" className="btn-right" ><a>Post</a></button></p>
             </form>
         );	
        }

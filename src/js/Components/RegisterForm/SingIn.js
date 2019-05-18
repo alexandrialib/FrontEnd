@@ -26,12 +26,12 @@ export default class SingIn extends Component {
         getUser(this.state,console.log,console.log);
       }
       onSubmit = async () => {
-        if(this.state.username==="" || this.state.password===""){
-         
-        }
+        const post = await  getUser(this.state,console.log,console.log);
+       
       }
 
     render(){
+      
   return (
     <MDBContainer className="cambios">
       <MDBRow>
@@ -81,11 +81,12 @@ export default class SingIn extends Component {
                   
                   color="red darken-3"
                   rounded
-                  href="/singin"
+               
                   onClick={() => this.onSubmit()}
                   className="btn-block z-depth-1a"
                  
                 >
+                 
                  <Link style={{color:"white"}}to={{pathname:'/profile',
                 state:{user:this.state.username,pass:this.state.password}
             }}>Sign in </Link>

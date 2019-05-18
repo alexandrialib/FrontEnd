@@ -38,11 +38,7 @@ class About extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="info">
-                                <span className="message">
-                                    <a href="#"><i className="fas fa-envelope-open"></i></a>
-                                </span>
-                                
+                            <div className="info">                       
                                 <h4>Juan Moreno</h4>
                                 <span>Backend Developer</span>
                             </div>
@@ -69,9 +65,6 @@ class About extends Component{
                                 </div>
                             </div>
                             <div className="info">
-                                <span className="message">
-                                    <a href="#"><i className="fas fa-envelope-open"></i></a>
-                                </span>
                                 <h4>Alejandro Guzman</h4>
                                 <span>Backend Developer</span>
                             </div>
@@ -98,9 +91,6 @@ class About extends Component{
                                 </div>
                             </div>
                             <div className="info">
-                                <span className="message">
-                                    <a href="#"><i className="fas fa-envelope-open"></i></a>
-                                </span>
                                 <h4>Yohanna Toro</h4>
                                 <span>Frontend Developer</span>
                             </div>

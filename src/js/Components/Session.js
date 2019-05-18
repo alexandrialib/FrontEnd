@@ -204,12 +204,12 @@ class Session extends React.Component {
             <Modal.Title>Share session </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <input className="share-input" id="url-input" ref={el => this.elRef = el} value={window.location.href} />
+          <input className="share-input" id="url-input" ref={el => this.elRef = el} defaultValue={window.location.href} />
           </Modal.Body>
           <Modal.Footer>
             
-          <p><button class="btn-right" style={{ color:"beige"}} onClick={this.copy}><a>Copy</a></button></p>
-            <p><button class="btn-right" style={{ color:"beige"}} onClick={this.handleClose}><a>Cancel</a></button></p>
+          <p><button className="btn-right" style={{ color:"beige"}} onClick={this.copy}><a>Copy</a></button></p>
+            <p><button className="btn-right" style={{ color:"beige"}} onClick={this.handleClose}><a>Cancel</a></button></p>
            
           </Modal.Footer>
         </Modal>

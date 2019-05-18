@@ -21,6 +21,7 @@ export async function getCategoryByName(name){
 
 }
 export async function getUserbyUsername(username,password){
+
   const {data:post}=await axios({
     method: "get",
     url: "/user",
@@ -28,6 +29,7 @@ export async function getUserbyUsername(username,password){
 
 
   })
+  
   return post;
 
 }
@@ -74,8 +76,7 @@ export async function getUser(user, success, fail) {
     url: "/user",
     auth: user
   })
-    .then(success)
-    .catch(fail);
+   
     
 }
 export function postCategory(name,user){ 

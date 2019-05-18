@@ -6,6 +6,7 @@ import Editor from './Editor'
 import Preview from './preview'
 import {postArticle, getUserbyUsername} from '../../../DataProvider'
 import NewArticleBox from '../MarkDown/postArticle/newArticleBox'
+import Home from '../../Home'
 
 
 
@@ -14,7 +15,8 @@ export default class Appi extends Component {
 		super(props);
 
 		this.state = {
-			user:{},
+			showEdit:false,
+			user:{username:this.props.location.state.users,password:this.props.location.state.pass},
 			markdown: [
 				"# Lorem ipsum !\n\n",
 				"![Meet the new boss](https://www.newscredit.org/wp-content/uploads/2019/02/Software-Development-2.jpg)\n\n",
@@ -87,14 +89,39 @@ export default class Appi extends Component {
 		});
 	}
 	async componentDidMount(){
-		const post =await getUserbyUsername(this.props.location.state.user,this.props.location.state.pass);
-		this.setState({user:post})
-		}
+		
+		const po= await getUserbyUsername(this.state.user.username,this.state.user.password)
+		  .then(response =>
+		  {
+			  
+		   if(response.status===401)
+			{
+				window.location="https://alexandria-lib-front.herokuapp.com/"
+				const tmp=true
+				this.setState({showEdit:tmp});
+			}
+
+		  })
+		 .catch(error =>
+		 {
+			if(error.status!==200)
+			{
+				const tmp=true
+				this.setState({showEdit:tmp});
+			}
+			
+		 });
+	}
 	async addArticle(category){
         postArticle(category.category,{"title":category.title,"content":this.state.markdown,"author":this.state.user});   
     }
 
 	render() {
+		if(this.state.showEdit){
+			window.location="https://alexandria-lib-front.herokuapp.com/"
+			
+		}
+		else{
 		return (
 			<div className="markdown-app">
             <NavBari />
@@ -123,7 +150,7 @@ export default class Appi extends Component {
 					{this.state.status}
 				</p>
 			</div>
-		);
+		);}
 	}
 }
 
