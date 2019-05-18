@@ -19,13 +19,43 @@
 }
 .profile-div{
   background-attachment: fixed;
-  @media (max-width: 800px) { 
-    .container-profile {
-       display: flex;
-    flex-direction: column;
-    } .content-profile {order: 2;
+  @media (max-width: 960px) { 
+     .content-profile {order: 2;
       margin-top: 34rem;
-    } }
+      left: 383px;
+      
+    } 
+    .container-profile {
+      right: 20rem;
+      left: 20rem;
+   }
+  
+  }
+  @media (max-width: 720px) { 
+    .container-profile {
+      right: 20rem;
+      left: 13rem;
+   }
+  
+  }
+  @media (max-width: 530px) { 
+    .container-profile {
+      right: 1rem;
+      left: 1rem;
+   }
+  
+  }
+ 
+    @media(max-width:800px){
+    .container-profile {
+      display: flex;
+   flex-direction: column;
+   }}
+  @media screen {
+    .content-profile{
+      width:auto;
+    }
+  }
 }
 
 
