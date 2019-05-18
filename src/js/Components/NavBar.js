@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
-MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon ,MDBCol} from "mdbreact";
+MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
 import {  MDBFormInline, MDBBtn} from
 "mdbreact";
-import { MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
-import Modal from 'react-bootstrap/Modal'
+import { MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import {Link} from 'react-router-dom'
 class NavbarPage extends Component {
 
@@ -31,14 +30,14 @@ toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
 }
 handleClose () {
-  console.log("kiki")
+  
   var rand =  1 + (Math.random() * (1000-1));
   var random=Math.floor(rand);
  
 }
 
 handleShow =()=>  {
-  console.log("holi")
+
   this.setState({ show: true });
 }
 

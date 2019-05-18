@@ -8,17 +8,14 @@ export default class CommentBox extends Component {
 	
 	constructor(props) {
 	super(props);
-	this.init();     
+	this.state={
+		data:[]
+	}  
 	}
    
-	init(){
-	  this.state = {data: []};
-	}
 	async loadCommentsFromServer() {
 	
-		const posts=await getAllCommentsByArticle(window.location.pathname);
-		console.log(posts)
-    
+		const posts=await getAllCommentsByArticle(window.location.pathname);    
     this.setState({data: posts});
 
 	}

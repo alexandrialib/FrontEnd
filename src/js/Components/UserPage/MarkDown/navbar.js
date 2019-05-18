@@ -16,7 +16,7 @@ export default class NavBar extends Component {
 
 	render() {
 		let buttons = [
-			<Button
+			<Button  key={"button-clear-nav1"}
 				handler={this.fsToggle}
 				label={this.props.expanded ? "exit expanded view" : "expand view"}
 				icon={this.props.expanded ? <MinIcon /> : <ExpandIcon />}
@@ -25,7 +25,7 @@ export default class NavBar extends Component {
 
 		if (this.props.view === "editor") {
 			buttons.unshift(
-				<Button handler={this.props.clear} label="clear" icon={<ClearIcon />} />
+				<Button handler={this.props.clear} key={"button-clear-nav"}label="clear" icon={<ClearIcon />} />
 			);
 		}
 

@@ -14,7 +14,6 @@ export default class CategoryBox extends Component{
         }
     }
     async addCategory(category){
-        console.log("esto no sirve"+ category.content)
         postCategory(category.content,"hola");
         const post= await getCategoryByName(category);
         if(post.name===category){

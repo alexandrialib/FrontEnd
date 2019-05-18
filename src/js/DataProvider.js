@@ -1,5 +1,5 @@
 import axios from "axios";
-import { func } from "prop-types";
+
 export var URL = "https://alexandria-lib-back.herokuapp.com";
 //URL = "http://localhost:8080";
 axios.defaults.baseURL = URL;
@@ -43,7 +43,7 @@ export async function getAllCommentsByArticle(url){
 export  function postCommentInArticle(comment,url){
   axios({
     method: "post",
-    url: "/categories/"+url+"/comments",
+    url: url+"/comments",
     auth: {"username":"admin","password":"admin"},
     data: comment
 

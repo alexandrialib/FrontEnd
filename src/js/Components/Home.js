@@ -39,15 +39,15 @@ export default class Home extends React.Component {
 
       <div className="App">
         <Navbar />
-        <div class="container-fluid">
+        <div className="container-fluid">
   <header>
-    <h1 class="page-title"></h1>
-    <p class="about">
+    <h1 className="page-title"></h1>
+    <p className="about">
       
     </p>
   </header>
   <section>
-    <div class="content">
+    <div className="content">
             <Card
               title="Quick"
               tags={["Sort"]}
@@ -75,38 +75,39 @@ export default class Home extends React.Component {
               refe="/categories/Graph%20theory/articles/TopoSort"
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
             />
-            {this.state.popular.map(key =>
-              <Card
-              title={key.title}
+            {this.state.popular.map((keys,i) =>
+              <Card key={i}
+              title={keys.title}
               tags={["Sort"]}
               content="orem ipsum dolor sit amet, consectetur adipisi"
-              refe={"/categories/Sort/articles/"+key.name}
+              refe={"/categories/Sort/articles/"+keys.name}
               img="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif"
               />
               )}        
     </div>
     <aside>
-     <div class="profilee widget">
-       <img src="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif" alt="My Name" class="user-image"/>
-       <div class="user-info">
-       <h3 class="user-name">TopoSort</h3>
-       <p class="user-about">Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+     <div className="profilee widget">
+       <img src="https://thumbs.gfycat.com/PracticalEnlightenedGrosbeak-small.gif" alt="My Name" className="user-image"/>
+       <div className="user-info">
+       <h3 className="user-name">TopoSort</h3>
+       <p className="user-about">Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
      </div>
        </div>
-      <div class="popular-post widget">
-        <div class="header">Popular Articles</div>
-        <ul class="list-popular-post">
-        {this.state.popularArticles.map(key =>
-        <PopulaPost 
-        title={key.title}/>
+      <div className="popular-post widget">
+        <div className="header">Popular Articles</div>
+        <ul className="list-popular-post">
+        {this.state.popularArticles.map((keys,i) =>
+        <PopulaPost key={i}
+        title={keys.title}/>
         )}
         </ul>
       </div>      
-          <div class="tags  header">          
-              <div class="tags-body">
-                {this.state.tagsList.map(key=>
-                <Tags 
-                title={key.name}/>)}
+          <div className="tags  header">          
+              <div className="tags-body">
+                {this.state.tagsList.map((keys,i)=>
+                <Tags key={i}
+                title={keys.name}
+                refe={"/categories/"+keys.name}/>)}
               </div>
             </div>
            </aside>

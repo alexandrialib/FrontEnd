@@ -91,14 +91,7 @@ export default class Appi extends Component {
 		this.setState({user:post})
 		}
 	async addArticle(category){
-		
-		console.log(category.category+"perro jiji")
-		console.log(this.state.markdown)
-		
-        console.log("esto no sirve"+ category.content)
-        postArticle(category.category,{"title":category.title,"content":this.state.markdown,"author":this.state.user});
-        
-       
+        postArticle(category.category,{"title":category.title,"content":this.state.markdown,"author":this.state.user});   
     }
 
 	render() {

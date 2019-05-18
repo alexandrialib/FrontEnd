@@ -9,24 +9,24 @@ export default class Card extends Component{
             ));
         return(
             
-            <div class="blog-card">
-            <div class="meta">
-              <div class="photo" style={{backgroundImage:"url(" + img + ")"}}></div>
-              <ul class="details">
-                <li class="author"><a href="#">John Doe</a></li>
-                <li class="date">Aug. 24, 2015</li>
-                <li class="tags">
+            <div className="blog-card">
+            <div className="meta">
+              <div className="photo" style={{backgroundImage:"url(" + img + ")"}}></div>
+              <ul className="details">
+                <li className="author"><a href="#">John Doe</a></li>
+                <li className="date">Aug. 24, 2015</li>
+                <li className="tags">
                   <ul>
                     {tags}
                   </ul>
                 </li>
               </ul>
             </div>
-            <div class="description">
+            <div className="description">
             <h1>{title}</h1>
       <h2>Opening a door to the future</h2>
       <p> {content}</p>
-    <p class="read-more">
+    <p className="read-more">
         <a href={refe}>Read More</a>
       </p>
   </div>

@@ -1,15 +1,16 @@
 import React,{Component} from 'react';
 
-export default class CommentForm extends React.Component {
+export default class CommentForm extends Component {
 	
 	constructor(props) {
 	 super(props);
-	 this.init();
+	 this.state={
+		 content:''
+	 }
+
 	}
 	
-	init(){
-		this.state = {content : ''};
-	}
+	
 	
 
 	 
@@ -39,7 +40,7 @@ export default class CommentForm extends React.Component {
 				 value={this.state.content}
 				 onChange={(e) => this.handleTextChange(e)} 
 			 /> 
-			<p><button type="submit" class="btn-right" ><a>Post</a></button></p>
+			<p><button type="submit" className="btn-right" ><a>Post</a></button></p>
 			 
 		 </form>
 	 );	

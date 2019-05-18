@@ -21,7 +21,6 @@ export class ArticleEditor extends Component {
   }
 
   onChange(newValue,x) {
-    console.log(newValue);
     this.setState({
       text: newValue
     });

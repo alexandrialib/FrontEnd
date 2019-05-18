@@ -43,13 +43,13 @@ export default class newArticleForm extends Component{
        render(){
         return (
             
-            <div class="wrapper">
+            <div className="wrapper">
 			
-			<div class="signin">
+			<div className="signin">
             
                
 				<form   onSubmit={(e) => this.handleSubmit(e)}>
-				  <div class="input-group">
+				  <div className="input-group">
                   <input
                     className="inputCat"
                     type="text"
@@ -59,7 +59,7 @@ export default class newArticleForm extends Component{
                 /> 
 				   
 				  </div>
-				  <div class="input-group">
+				  <div className="input-group">
                   <input
                     className="inputCat"
                     type="text"
@@ -69,7 +69,7 @@ export default class newArticleForm extends Component{
                 /> 
 				    
 				  </div>
-				  <input type="submit" class="btn-right"/>
+				  <input type="submit" className="btn-right"/>
 				</form>
 			</div>
 	</div>

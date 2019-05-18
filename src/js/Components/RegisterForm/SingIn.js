@@ -1,12 +1,10 @@
 import React,{Component} from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
 import '../../../css/RegisterForm/SingIn.css'
-import { prototype } from "events";
 import {getUser} from "../../DataProvider"
-import { sha256, sha224 } from "js-sha256";
 
 import {Link} from 'react-router-dom'
-import Profile from '../UserPage/profile'
+
 export default class SingIn extends Component {
     constructor(){
         super();
@@ -24,18 +22,13 @@ export default class SingIn extends Component {
       });
     }
     login(){
-        var cred = {
-          "username":this.state.username,
-          "password":sha256(this.state.password)
-        }
+        
         getUser(this.state,console.log,console.log);
       }
       onSubmit = async () => {
-        if(this.state.username=="" || this.state.password==""){
+        if(this.state.username==="" || this.state.password===""){
          
         }
-        const response = await getUser(this.state,console.log,console.log)
-        
       }
 
     render(){

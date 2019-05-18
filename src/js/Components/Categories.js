@@ -30,9 +30,9 @@ export default class Categories extends Component{
                   <section className="section-container">
               
                 <div className="contai">
-                    {this.state.categories.map(key=>
-                      <Category 
-                      title={key.name}
+                    {this.state.categories.map((keys,i)=>
+                      <Category key={i}
+                      title={keys.name}
                   />
                     )}</div>
                

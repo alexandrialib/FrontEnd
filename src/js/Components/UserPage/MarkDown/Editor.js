@@ -19,7 +19,7 @@ export default class Editor extends Component {
 						: this.props.expanded === "Preview" ? " minimize" : "")
 				}
 			>
-				<NavBar
+				<NavBar key={27777777}
 					heading="Markdown"
 					clear={this.props.clear}
 					expand={this.props.expanding}

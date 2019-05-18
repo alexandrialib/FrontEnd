@@ -29,7 +29,7 @@ export default class Comment extends Component {
 	
 		<div className=" infos">
 		  <img src={this.state.avatar[this.state.random]} alt="" title="by tresMunkeys" />
-     <a href="https://github.com/" class="sprite github">github</a>
+     <a href="https://github.com/" className="sprite github">github</a>
 		<div className=" co-content">
 			<h2 className="commentAuthor">
                 {this.props.author.username}

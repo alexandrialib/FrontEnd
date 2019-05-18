@@ -10,9 +10,9 @@ export default class CommentList extends Component {
  
   render(){
    
-   let commentNodes = this.props.data.map((comment)=>{
+   let commentNodes = this.props.data.map((comment,i)=>{
      return (
-       <Comment author={comment.author} key={comment.id}>
+       <Comment author={comment.author} key={i}>
          {comment.content}
        </Comment>
      );

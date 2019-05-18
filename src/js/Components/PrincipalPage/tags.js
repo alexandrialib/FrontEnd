@@ -10,20 +10,18 @@ export default class TagList extends Component{
     }
     async componentDidMount (){
         const post= await getAllCategories("categories")
-        console.log("post")
-        console.log(post[0].name)
         this.setState({tagsList:post})
     }
     render(){
         var min = 0;
         var max = 3;
-        const {title}=this.props;
+        const {title,refe}=this.props;
 	    var rand =  min + (Math.random() * (max-min));
         var random=Math.floor(rand);
         const color= this.state.color[random]
         return(
 
-                 <span class={"tag tag-"+color}> {title}</span>
+                 <a href={refe} className={"tag tag-"+color}> {title}</a>
                
         )
     }

@@ -1,8 +1,7 @@
 import React,{Component} from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBModalFooter } from 'mdbreact';
 import '../../../css/RegisterForm/SingIn.css'
 import '../../../css/RegisterForm/SingUp.css'
-import { prototype } from "events";
 import {postUser} from "../../DataProvider"
 import {Link} from 'react-router-dom'
 export default class SingUp extends Component {

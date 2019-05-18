@@ -36,18 +36,18 @@ class Article extends Component {
     return (
       <div className="articulo">
         <Navbar />
-        <section class="section-container">
-        <div class="icon">
-    <div class="calendar">
+        <section className="section-container">
+        <div className="icon">
+    <div className="calendar">
       25
-      <div class="holes"></div>
-      <div class="flip"></div>
+      <div className="holes"></div>
+      <div className="flip"></div>
     </div>
   </div>
           <section className="left-step">
 
             <h1>{this.state.article.title}</h1>
-            <p class="author">{this.state.author.username}<br />Published on: 17th March, 2014.</p>
+            <p className="author">{this.state.author.username}<br />Published on: 17th March, 2014.</p>
             <h2 className="formatArt">{this.state.article.title}</h2>
             <Markdown 
             source= {this.state.article.content}
