@@ -90,27 +90,8 @@ export default class Appi extends Component {
 	}
 	async componentDidMount(){
 		
-		const po= await getUserbyUsername(this.state.user.username,this.state.user.password)
-		  .then(response =>
-		  {
-			  
-		   if(response.status===401)
-			{
-				window.location="https://alexandria-lib-front.herokuapp.com/"
-				const tmp=true
-				this.setState({showEdit:tmp});
-			}
-
-		  })
-		 .catch(error =>
-		 {
-			if(error.status!==200)
-			{
-				const tmp=true
-				this.setState({showEdit:tmp});
-			}
-			
-		 });
+		const post= await getUserbyUsername(this.state.user.username,this.state.user.password)
+		  this.setState({user:post})
 	}
 	async addArticle(category){
         postArticle(category.category,{"title":category.title,"content":this.state.markdown,"author":this.state.user});   
